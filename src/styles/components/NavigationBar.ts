@@ -7,7 +7,7 @@ export const NavigationBarContainer = styled(Box)`
   left: 0;
   height: 100vh;
   width: fit-content;
-  background-color: white;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;

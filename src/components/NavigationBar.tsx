@@ -1,12 +1,3 @@
-import { ActionIcon } from "@mantine/core";
-import {
-  BiBriefcase,
-  BiCategory,
-  BiHome,
-  BiMessage,
-  BiSmile,
-  BiTrophy,
-} from "react-icons/bi";
 import { Link } from "react-scroll";
 import { NavigationBarContainer } from "../styles/components/NavigationBar";
 import { NavigationItem } from "../styles/components/NaviagtionItem";

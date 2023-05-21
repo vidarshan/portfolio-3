@@ -9,11 +9,15 @@ import { AppContainer } from "./styles/containers/App";
 import "./App.css";
 import AffixControl from "./components/AffixControl";
 import {
+  ActionIcon,
   ColorScheme,
   ColorSchemeProvider,
+  Container,
   MantineProvider,
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import { IoMoon } from "react-icons/io5";
+import ThemeSwitch from "./components/ThemeSwitch";
 
 const App = () => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -37,14 +41,17 @@ const App = () => {
         withNormalizeCSS
       >
         <AppContainer>
+          <ThemeSwitch />
           <AffixControl />
           <NavigationBar />
-          <HomePage id="home" />
-          <AboutPage id="about" />
-          <WorkPage id="work" />
-          <ProjectPage id="project" />
-          <TestimonialPage id="testimonial" />
-          <ContactPage id="contact" />
+          <Container size='xl' sx={{ backgroundColor: "red" }}>
+            <HomePage id="home" />
+            <AboutPage id="about" />
+            <WorkPage id="work" />
+            <ProjectPage id="project" />
+            <TestimonialPage id="testimonial" />
+            <ContactPage id="contact" />
+          </Container>
         </AppContainer>
       </MantineProvider>
     </ColorSchemeProvider>

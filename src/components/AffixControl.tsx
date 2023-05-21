@@ -1,11 +1,4 @@
-import {
-  ActionIcon,
-  Affix,
-  Button,
-  Text,
-  Transition,
-  rem,
-} from "@mantine/core";
+import { ActionIcon, Affix, Transition, rem } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import React from "react";
 import { TbCircleArrowUpFilled } from "react-icons/tb";
