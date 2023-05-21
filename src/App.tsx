@@ -44,7 +44,7 @@ const App = () => {
           <ThemeSwitch />
           <AffixControl />
           <NavigationBar />
-          <Container size='xl' sx={{ backgroundColor: "red" }}>
+          <Container size="lg">
             <HomePage id="home" />
             <AboutPage id="about" />
             <WorkPage id="work" />
