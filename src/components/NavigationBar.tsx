@@ -9,39 +9,48 @@ import {
 } from "react-icons/bi";
 import { Link } from "react-scroll";
 import { NavigationBarContainer } from "../styles/components/NavigationBar";
+import { NavigationItem } from "../styles/components/NaviagtionItem";
+import {
+  IoBriefcase,
+  IoChatbox,
+  IoGrid,
+  IoHandRight,
+  IoHome,
+  IoTrophy,
+} from "react-icons/io5";
 
 const NavigationBar = () => {
   return (
     <NavigationBarContainer>
       <Link activeClass="active" smooth spy to="home">
-        <ActionIcon>
-          <BiHome />
-        </ActionIcon>
+        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
+          <IoHome color="white" size={16} />
+        </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="about">
-        <ActionIcon>
-          <BiSmile />
-        </ActionIcon>
+        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
+          <IoHandRight color="white" size={16} />
+        </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="work">
-        <ActionIcon>
-          <BiBriefcase />
-        </ActionIcon>
+        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
+          <IoBriefcase color="white" size={16} />
+        </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="project">
-        <ActionIcon>
-          <BiCategory />
-        </ActionIcon>
+        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
+          <IoGrid color="white" size={16} />
+        </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="testimonial">
-        <ActionIcon>
-          <BiTrophy />
-        </ActionIcon>
+        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
+          <IoTrophy color="white" size={16} />
+        </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="contact">
-        <ActionIcon>
-          <BiMessage />
-        </ActionIcon>
+        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
+          <IoChatbox color="white" size={16} />
+        </NavigationItem>
       </Link>
     </NavigationBarContainer>
   );
