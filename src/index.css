@@ -24,3 +24,8 @@ div{
 .active > button{
 background-color: #82c91e;
 }
+
+
+.mantine-Tooltip-tooltip {
+  font-weight: 700;
+}

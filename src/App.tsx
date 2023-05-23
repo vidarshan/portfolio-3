@@ -16,8 +16,8 @@ import {
   MantineProvider,
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage } from "@mantine/hooks";
-import { IoMoon } from "react-icons/io5";
 import ThemeSwitch from "./components/ThemeSwitch";
+import { Notifications } from "@mantine/notifications";
 
 const App = () => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -40,6 +40,7 @@ const App = () => {
         withGlobalStyles
         withNormalizeCSS
       >
+        <Notifications position="bottom-left" />
         <AppContainer>
           <ThemeSwitch />
           <AffixControl />

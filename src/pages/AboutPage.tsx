@@ -10,6 +10,7 @@ import {
 } from "../styles/pages/AboutPage";
 import {
   ActionIcon,
+  Anchor,
   Avatar,
   Badge,
   Blockquote,
@@ -19,6 +20,7 @@ import {
   Divider,
   Flex,
   Group,
+  HoverCard,
   Text,
   Tooltip,
 } from "@mantine/core";
@@ -47,7 +49,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
       <Text size={32} weight={700}>
         About Me
       </Text>
-      <Card radius="lg" withBorder>
+      <Card radius="lg" shadow="xl" withBorder>
         <Flex
           sx={{ marginBottom: 10 }}
           align="center"
@@ -94,52 +96,89 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <AiFillLinkedin />
                 </ActionIcon>
               </Tooltip>
+              <HoverCard width={280} shadow="md" withArrow>
+                <HoverCard.Target>
+                  <GithubContainer>
+                    <ActionIcon
+                      color="gray"
+                      radius="xl"
+                      variant="filled"
+                      size="lg"
+                    >
+                      <AiFillGithub />
+                    </ActionIcon>
+                    <GithubIconContainer>
+                      <AiOutlineBranches color="#fff" />
+                    </GithubIconContainer>
+                    <GithubText>1</GithubText>
+                    <GithubIconContainer>
+                      <AiTwotoneStar color="#fff" />
+                    </GithubIconContainer>
+                    <GithubText>100</GithubText>
+                  </GithubContainer>
+                </HoverCard.Target>
+                <HoverCard.Dropdown
+                  style={{
+                    backgroundColor: "#3c3c3c",
+                    color: "white",
+                    fontWeight: 600,
+                  }}
+                >
+                  <Text size="sm">
+                    My Stackoverflow reputation, gold, silver, and bronze medial
+                    I've aquired through my interactions with their site.
+                  </Text>
+                  <Flex direction="row" justify="flex-end">
+                    <Anchor href="https://mantine.dev/" target="_blank">
+                      View Account
+                    </Anchor>
+                  </Flex>
+                </HoverCard.Dropdown>
+              </HoverCard>
 
-              <Tooltip label="Gmail" withArrow>
-                <GithubContainer>
-                  <ActionIcon
-                    color="gray"
-                    radius="xl"
-                    variant="filled"
-                    size="lg"
-                  >
-                    <AiFillGithub />
-                  </ActionIcon>
-                  <GithubIconContainer>
-                    <AiOutlineBranches color="#fff" />
-                  </GithubIconContainer>
-                  <GithubText>1</GithubText>
-                  <GithubIconContainer>
-                    <AiTwotoneStar color="#fff" />
-                  </GithubIconContainer>
-                  <GithubText>100</GithubText>
-                </GithubContainer>
-              </Tooltip>
-
-              <Tooltip label="Gmail" withArrow>
-                <StackOverflowContainer>
-                  <ActionIcon
-                    color="orange"
-                    radius="xl"
-                    variant="filled"
-                    size="lg"
-                  >
-                    <SiStackoverflow />
-                  </ActionIcon>
-                  <GithubIconContainer>
-                    <RiMedalFill color="#fff" />
-                  </GithubIconContainer>
-                  <GithubText>1</GithubText>
-                  <GithubIconContainer>
-                    <RiMedalFill color="#fff" />
-                  </GithubIconContainer>
-                  <GithubText>1</GithubText>
-                  <GithubIconContainer>
-                    <RiMedalFill color="#fff" />
-                  </GithubIconContainer>
-                  <GithubText>100</GithubText>
-                </StackOverflowContainer>
-              </Tooltip>
+              <HoverCard width={280} shadow="md" withArrow>
+                <HoverCard.Target>
+                  <StackOverflowContainer>
+                    <ActionIcon
+                      color="orange"
+                      radius="xl"
+                      variant="filled"
+                      size="lg"
+                    >
+                      <SiStackoverflow />
+                    </ActionIcon>
+                    <GithubIconContainer>
+                      <RiMedalFill color="#fff" />
+                    </GithubIconContainer>
+                    <GithubText>1</GithubText>
+                    <GithubIconContainer>
+                      <RiMedalFill color="#fff" />
+                    </GithubIconContainer>
+                    <GithubText>1</GithubText>
+                    <GithubIconContainer>
+                      <RiMedalFill color="#fff" />
+                    </GithubIconContainer>
+                    <GithubText>100</GithubText>
+                  </StackOverflowContainer>
+                </HoverCard.Target>
+                <HoverCard.Dropdown
+                  style={{
+                    backgroundColor: "#3c3c3c",
+                    color: "white",
+                    fontWeight: 600,
+                  }}
+                >
+                  <Text size="sm">
+                    My Stackoverflow reputation, gold, silver, and bronze medial
+                    I've aquired through my interactions with their site.
+                  </Text>
+                  <Flex direction="row" justify="flex-end">
+                    <Anchor href="https://mantine.dev/" target="_blank">
+                      View Account
+                    </Anchor>
+                  </Flex>
+                </HoverCard.Dropdown>
+              </HoverCard>
             </Group>
           </Flex>
         </Flex>
