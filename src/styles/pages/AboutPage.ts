@@ -3,6 +3,9 @@ import styled, { css } from "styled-components";
 import { ICustomChip } from "../../interfaces/IAboutPage";
 
 export const AboutPageContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
 `;
 

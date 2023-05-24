@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
 export const ProjectPageContainer = styled.section`
-  height: 100vh;
+  margin-bottom: 50px;
+
+  .mantine-Card-root {
+    height: 100%;
+  }
 `;
