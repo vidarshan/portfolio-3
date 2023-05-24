@@ -62,7 +62,7 @@ const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
                 </Flex>
                 <Divider my="sm" />
                 <Blockquote
-                  icon={<ImQuotesLeft />}
+                  icon={<ImQuotesLeft color="#c2c2c2" />}
                   sx={{ fontSize: "14px", fontWeight: 700 }}
                 >
                   <Spoiler

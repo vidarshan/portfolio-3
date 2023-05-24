@@ -14,7 +14,6 @@ import {
   Avatar,
   Badge,
   Blockquote,
-  Box,
   Card,
   ColorScheme,
   Divider,
@@ -209,7 +208,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
           </Flex>
         </Flex>
         <Divider />
-        <Blockquote icon={<ImQuotesLeft />} cite="">
+        <Blockquote icon={<ImQuotesLeft color="#c2c2c2" />} cite="">
           <Text size="md" weight={600}>
             I'm a Software Engineer who likes to see things being built one line
             of code at a time. Well organised and prefers to have incremental

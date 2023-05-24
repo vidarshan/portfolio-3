@@ -12,7 +12,6 @@ import {
   Text,
   ThemeIcon,
 } from "@mantine/core";
-import { RiNumber5 } from "react-icons/ri";
 import { BiLinkExternal } from "react-icons/bi";
 import { work } from "../data/work";
 
@@ -28,10 +27,10 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
             <Flex direction="row" align="center" justify="space-between">
               <Flex direction="row" align="center">
                 <ThemeIcon
-                  color="red"
+                  color="yellow"
                   radius="xl"
                   size="md"
-                  variant="light"
+                  variant="filled"
                   sx={{ marginRight: 10 }}
                 >
                   {item.icon}
@@ -43,7 +42,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                   <Text color="dimmed" size="xs" weight={800} tt="uppercase">
                     {item.contribution}
                   </Text>
-                  <Text color="indigo" weight={700} size="sm">
+                  <Text color="yellow" weight={700} size="sm">
                     {item.company}
                   </Text>
                   <Text size="xs" weight={700} mt={4}>
@@ -51,7 +50,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                   </Text>
                 </Flex>
               </Flex>
-              <ActionIcon color="red" radius="xl" variant="light" size="md">
+              <ActionIcon color="red" radius="xl" variant="" size="sm">
                 <BiLinkExternal />
               </ActionIcon>
             </Flex>
@@ -68,7 +67,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                       key={competency.id}
                       color={competency.color}
                       size="md"
-                      variant="light"
+                      variant="filled"
                     >
                       {competency.name}
                     </Badge>

@@ -141,17 +141,17 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
                     variant="filled"
                     onClick={() => clearForm()}
                   >
-                    <MdOutlineClose />
+                    <MdOutlineClose color="white" />
                   </ActionIcon>
                   <Button
                     size="sm"
                     radius="xl"
-                    color="red"
-                    leftIcon={<IoSend />}
+                    color="yellow"
+                    leftIcon={<IoSend color="black" />}
                     variant="filled"
                     type="submit"
                   >
-                    Send Message
+                    <Text color="dark">Send Message</Text>
                   </Button>
                 </Group>
               </Flex>

@@ -9,7 +9,7 @@ import {
 export const work = [
   {
     title: "Intern Software Engineer",
-    icon: <RiNumber1 />,
+    icon: <RiNumber1 color="#000" />,
     contribution: "Contribution: Full Stack Developer",
     company: "Excalibur Systems",
     date: "2020-08 ~ 2021-04",
@@ -49,7 +49,7 @@ export const work = [
   },
   {
     title: "Trainee Software Engineer",
-    icon: <RiNumber2 />,
+    icon: <RiNumber2 color="#000" />,
     contribution: "Contribution: Full Stack Developer",
     company: "Beta Launch",
     date: "2021-04 ~ 2021-09",
@@ -89,7 +89,7 @@ export const work = [
   },
   {
     title: "Associate Software Engineer",
-    icon: <RiNumber3 />,
+    icon: <RiNumber3 color="#000" />,
     contribution: "Contribution: Full Stack Developer",
     company: "Beta Launch",
     date: "2022-09 ~ 2022-03",
@@ -134,7 +134,7 @@ export const work = [
   },
   {
     title: "Associate Software Engineer",
-    icon: <RiNumber4 />,
+    icon: <RiNumber4 color="#000" />,
     contribution: "Contribution: Full Stack Developer",
     company: "Dev4s",
     date: "2022-03 ~ 2022-05",
@@ -178,7 +178,7 @@ export const work = [
   },
   {
     title: "Software Engineer",
-    icon: <RiNumber5 />,
+    icon: <RiNumber5 color="#000" />,
     contribution: "Contribution: Frontend Developer",
     company: "Appspotr",
     date: "2022-05 ~ Present",
