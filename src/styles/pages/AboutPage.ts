@@ -1,5 +1,6 @@
 import { ActionIcon, Box, Text } from "@mantine/core";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { ICustomChip } from "../../interfaces/IAboutPage";
 
 export const AboutPageContainer = styled.section`
   height: 100vh;
@@ -11,28 +12,39 @@ export const AboutHeaderText = styled(Text)`
   font-weight: 700;
 `;
 
-export const GithubContainer = styled(Box)`
+export const GithubContainer = styled(Box)<ICustomChip>`
   display: flex;
   align-items: center;
-  background-color: #868e96;
+
+  ${(props) =>
+    props.color
+      ? css`
+          background-color: #343a40;
+        `
+      : css`
+          background-color: #868e96;
+        `};
   width: fit-content;
   border-radius: 2rem;
   padding: 0;
-  :hover {
-    background-color: #25262b;
-  }
 `;
 
-export const StackOverflowContainer = styled(Box)`
+export const StackOverflowContainer = styled(Box)<ICustomChip>`
   display: flex;
   align-items: center;
-  background-color: #fd7e14;
+
+  ${(props) =>
+    props.color
+      ? css`
+          background-color: #e8590c;
+        `
+      : css`
+          background-color: rgb(253, 126, 20);
+        `};
+
   width: fit-content;
   border-radius: 2rem;
   padding: 0;
-  :hover {
-    background-color: #fd7e14;
-  }
 `;
 
 export const GithubIconContainer = styled.div`
@@ -40,11 +52,20 @@ export const GithubIconContainer = styled.div`
   align-items: center;
 `;
 
-export const GithubText = styled(Text)`
+export const GithubText = styled(Text)<ICustomChip>`
   color: white;
   font-weight: 800;
   font-size: 14px;
   margin: 0 4px;
+
+  ${(props) =>
+    props.color
+      ? css`
+          color: #fff;
+        `
+      : css`
+          color: #fff;
+        `};
 
   :last-child {
     margin-right: 6px;

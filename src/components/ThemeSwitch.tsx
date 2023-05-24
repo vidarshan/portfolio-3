@@ -1,21 +1,28 @@
 import { ActionIcon, ColorScheme, useMantineColorScheme } from "@mantine/core";
 import React from "react";
-import { IoMoon } from "react-icons/io5";
+import { BiSun, BiMoon } from "react-icons/bi";
 import { ThemeSwitchContainer } from "../styles/components/ThemeSwitch";
 
 const ThemeSwitch = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const dark = colorScheme === "dark";
+  console.log(
+    "🚀 ~ file: ThemeSwitch.tsx:8 ~ ThemeSwitch ~ colorScheme:",
+    colorScheme
+  );
 
   return (
     <ThemeSwitchContainer>
       <ActionIcon
-        color="yellow"
+        color={colorScheme === "dark" ? "yellow" : "yellow"}
         variant="filled"
         radius="xl"
         onClick={() => toggleColorScheme()}
       >
-        <IoMoon color="black" />
+        {colorScheme === "dark" ? (
+          <BiMoon color="black" />
+        ) : (
+          <BiSun color="black" />
+        )}
       </ActionIcon>
     </ThemeSwitchContainer>
   );

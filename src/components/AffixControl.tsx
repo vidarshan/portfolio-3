@@ -1,7 +1,7 @@
 import { ActionIcon, Affix, Transition, rem } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import React from "react";
-import { TbCircleArrowUpFilled } from "react-icons/tb";
+import { BiArrowToTop } from "react-icons/bi";
 
 const AffixControl = () => {
   const [scroll, scrollTo] = useWindowScroll();
@@ -11,12 +11,14 @@ const AffixControl = () => {
       <Transition transition="slide-up" mounted={scroll.y > 0}>
         {(transitionStyles) => (
           <ActionIcon
-            size="xl"
-            color="lime"
+            size="lg"
+            color="blue"
+            variant="filled"
+            radius="xl"
             style={transitionStyles}
             onClick={() => scrollTo({ y: 0 })}
           >
-            <TbCircleArrowUpFilled size={80} />
+            <BiArrowToTop size={20} color="white" />
           </ActionIcon>
         )}
       </Transition>

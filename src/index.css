@@ -21,8 +21,8 @@ div{
   font-family: 'Manrope', sans-serif !important;
 }
 
-.active > button{
-background-color: #82c91e;
+.active > button > svg{
+color: rgb(255, 255, 255) !important;
 }
 
 

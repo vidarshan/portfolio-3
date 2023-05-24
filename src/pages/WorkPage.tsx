@@ -31,6 +31,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                   color="red"
                   radius="xl"
                   size="md"
+                  variant="light"
                   sx={{ marginRight: 10 }}
                 >
                   {item.icon}
@@ -67,7 +68,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                       key={competency.id}
                       color={competency.color}
                       size="md"
-                      variant="filled"
+                      variant="light"
                     >
                       {competency.name}
                     </Badge>

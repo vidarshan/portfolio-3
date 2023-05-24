@@ -98,7 +98,9 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
               </Tooltip>
               <HoverCard width={280} shadow="md" withArrow>
                 <HoverCard.Target>
-                  <GithubContainer>
+                  <GithubContainer
+                    color={colorScheme === "dark" ? true : false}
+                  >
                     <ActionIcon
                       color="gray"
                       radius="xl"
@@ -110,22 +112,29 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                     <GithubIconContainer>
                       <AiOutlineBranches color="#fff" />
                     </GithubIconContainer>
-                    <GithubText>1</GithubText>
+                    <GithubText color={colorScheme === "dark" ? true : false}>
+                      1
+                    </GithubText>
                     <GithubIconContainer>
                       <AiTwotoneStar color="#fff" />
                     </GithubIconContainer>
-                    <GithubText>100</GithubText>
+                    <GithubText color={colorScheme === "dark" ? true : false}>
+                      100
+                    </GithubText>
                   </GithubContainer>
                 </HoverCard.Target>
                 <HoverCard.Dropdown
                   style={{
-                    backgroundColor: "#3c3c3c",
+                    backgroundColor: colorScheme === "dark" ? "#fff" : "#000",
                     color: "white",
                     fontWeight: 600,
                   }}
                 >
-                  <Text size="sm">
-                    My Stackoverflow reputation, gold, silver, and bronze medial
+                  <Text
+                    size="sm"
+                    color={colorScheme === "dark" ? "#000" : "#fff"}
+                  >
+                    Stackoverflow reputation, gold, silver, and bronze medial
                     I've aquired through my interactions with their site.
                   </Text>
                   <Flex direction="row" justify="flex-end">
@@ -138,7 +147,9 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
 
               <HoverCard width={280} shadow="md" withArrow>
                 <HoverCard.Target>
-                  <StackOverflowContainer>
+                  <StackOverflowContainer
+                    color={colorScheme === "dark" ? true : false}
+                  >
                     <ActionIcon
                       color="orange"
                       radius="xl"
@@ -148,27 +159,42 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                       <SiStackoverflow />
                     </ActionIcon>
                     <GithubIconContainer>
-                      <RiMedalFill color="#fff" />
+                      <RiMedalFill
+                        color={colorScheme === "dark" ? "#fff" : "#fff"}
+                      />
                     </GithubIconContainer>
-                    <GithubText>1</GithubText>
+                    <GithubText color={colorScheme === "dark" ? false : true}>
+                      1
+                    </GithubText>
                     <GithubIconContainer>
-                      <RiMedalFill color="#fff" />
+                      <RiMedalFill
+                        color={colorScheme === "dark" ? "#fff" : "#fff"}
+                      />
                     </GithubIconContainer>
-                    <GithubText>1</GithubText>
+                    <GithubText color={colorScheme === "dark" ? false : true}>
+                      1
+                    </GithubText>
                     <GithubIconContainer>
-                      <RiMedalFill color="#fff" />
+                      <RiMedalFill
+                        color={colorScheme === "dark" ? "#fff" : "#fff"}
+                      />
                     </GithubIconContainer>
-                    <GithubText>100</GithubText>
+                    <GithubText color={colorScheme === "dark" ? false : true}>
+                      100
+                    </GithubText>
                   </StackOverflowContainer>
                 </HoverCard.Target>
                 <HoverCard.Dropdown
                   style={{
-                    backgroundColor: "#3c3c3c",
+                    backgroundColor: colorScheme === "dark" ? "#fff" : "#000",
                     color: "white",
                     fontWeight: 600,
                   }}
                 >
-                  <Text size="sm">
+                  <Text
+                    size="sm"
+                    color={colorScheme === "dark" ? "#000" : "#fff"}
+                  >
                     My Stackoverflow reputation, gold, silver, and bronze medial
                     I've aquired through my interactions with their site.
                   </Text>
@@ -214,7 +240,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
               <Badge
                 key={technology.id}
                 color={technology.color}
-                size="md"
+                size="sm"
                 variant="filled"
               >
                 {technology.name}

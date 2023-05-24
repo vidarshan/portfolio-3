@@ -9,38 +9,46 @@ import {
   IoHome,
   IoTrophy,
 } from "react-icons/io5";
+import {
+  BiBriefcase,
+  BiGrid,
+  BiHome,
+  BiMessage,
+  BiTrophy,
+  BiUserCircle,
+} from "react-icons/bi";
 
 const NavigationBar = () => {
   return (
     <NavigationBarContainer>
       <Link activeClass="active" smooth spy to="home">
-        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
-          <IoHome color="white" size={16} />
+        <NavigationItem size="lg" radius="xl" color="yellow" variant="filled">
+          <BiHome size={18} color="black" />
         </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="about">
-        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
-          <IoHandRight color="white" size={16} />
+        <NavigationItem size="lg" radius="xl" color="yellow" variant="filled">
+          <BiUserCircle size={18} color="black" />
         </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="work">
-        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
-          <IoBriefcase color="white" size={16} />
+        <NavigationItem size="lg" radius="xl" color="yellow" variant="filled">
+          <BiBriefcase size={18} color="black" />
         </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="project">
-        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
-          <IoGrid color="white" size={16} />
+        <NavigationItem size="lg" radius="xl" color="yellow" variant="filled">
+          <BiGrid size={18} color="black" />
         </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="testimonial">
-        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
-          <IoTrophy color="white" size={16} />
+        <NavigationItem size="lg" radius="xl" color="yellow" variant="filled">
+          <BiTrophy size={18} color="black" />
         </NavigationItem>
       </Link>
       <Link activeClass="active" smooth spy to="contact">
-        <NavigationItem size="lg" radius="xl" color="red" variant="filled">
-          <IoChatbox color="white" size={16} />
+        <NavigationItem size="lg" radius="xl" color="yellow" variant="filled">
+          <BiMessage size={18} color="black" />
         </NavigationItem>
       </Link>
     </NavigationBarContainer>
