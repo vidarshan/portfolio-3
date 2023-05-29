@@ -1,7 +1,6 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { IAboutPage } from "../interfaces/IAboutPage";
 import {
-  AboutHeaderText,
   AboutPageContainer,
   GithubContainer,
   GithubIconContainer,
@@ -34,7 +33,9 @@ import {
 import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import { RiMedalFill } from "react-icons/ri";
 import { ImQuotesLeft } from "react-icons/im";
-import { technologies } from "../data/competencies";
+import { technicalCompetencies, technologies } from "../data/competencies";
+import { motion } from "framer-motion";
+import { container, item } from "../animations";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {
   const largeScreen = useMediaQuery("(min-width: 700px)");
@@ -49,7 +50,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
       <Text size={32} weight={700}>
         About Me
       </Text>
-      <Card radius="md" shadow="xs" withBorder>
+      <Card sx={{ marginTop: 30 }} radius="lg" withBorder>
         <Flex
           sx={{
             marginBottom: 10,
@@ -86,134 +87,172 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
             direction="row"
             align="center"
           >
-            <Group>
-              <Tooltip label="Download resume" withArrow>
-                <ActionIcon color="gray" radius="sm" variant="filled" size="lg">
-                  <HiOutlineDownload />
-                </ActionIcon>
-              </Tooltip>
-
-              <Tooltip label="Gmail" withArrow>
-                <ActionIcon color="red" radius="sm" variant="filled" size="lg">
-                  <SiGmail />
-                </ActionIcon>
-              </Tooltip>
-
-              <Tooltip label="Linkedin" withArrow>
-                <ActionIcon color="blue" radius="sm" variant="filled" size="lg">
-                  <AiFillLinkedin />
-                </ActionIcon>
-              </Tooltip>
-              <HoverCard width={280} shadow="md" withArrow>
-                <HoverCard.Target>
-                  <GithubContainer
-                    color={colorScheme === "dark" ? true : false}
-                  >
+            <motion.div variants={container} initial="hidden" animate="visible">
+              <Group>
+                <motion.div variants={item}>
+                  <Tooltip label="Download resume" withArrow>
                     <ActionIcon
-                      color="gray"
-                      radius="sm"
+                      color="pink"
+                      radius="xl"
                       variant="filled"
                       size="lg"
                     >
-                      <AiFillGithub />
+                      <HiOutlineDownload />
                     </ActionIcon>
-                    <GithubIconContainer>
-                      <AiOutlineBranches color="#fff" />
-                    </GithubIconContainer>
-                    <GithubText color={colorScheme === "dark" ? true : false}>
-                      1
-                    </GithubText>
-                    <GithubIconContainer>
-                      <AiTwotoneStar color="#fff" />
-                    </GithubIconContainer>
-                    <GithubText color={colorScheme === "dark" ? true : false}>
-                      100
-                    </GithubText>
-                  </GithubContainer>
-                </HoverCard.Target>
-                <HoverCard.Dropdown
-                  style={{
-                    backgroundColor: colorScheme === "dark" ? "#fff" : "#000",
-                    color: "white",
-                    fontWeight: 600,
-                  }}
-                >
-                  <Text
-                    size="sm"
-                    color={colorScheme === "dark" ? "#000" : "#fff"}
-                  >
-                    Stackoverflow reputation, gold, silver, and bronze medial
-                    I've aquired through my interactions with their site.
-                  </Text>
-                  <Flex direction="row" justify="flex-end">
-                    <Anchor href="https://mantine.dev/" target="_blank">
-                      View Account
-                    </Anchor>
-                  </Flex>
-                </HoverCard.Dropdown>
-              </HoverCard>
-
-              <HoverCard width={280} shadow="md" withArrow>
-                <HoverCard.Target>
-                  <StackOverflowContainer
-                    color={colorScheme === "dark" ? true : false}
-                  >
+                  </Tooltip>
+                </motion.div>
+                <motion.div variants={item}>
+                  <Tooltip label="Gmail" withArrow>
                     <ActionIcon
-                      color="orange"
-                      radius="sm"
+                      color="red"
+                      radius="xl"
                       variant="filled"
                       size="lg"
                     >
-                      <SiStackoverflow />
+                      <SiGmail />
                     </ActionIcon>
-                    <GithubIconContainer>
-                      <RiMedalFill
-                        color={colorScheme === "dark" ? "#fff" : "#fff"}
-                      />
-                    </GithubIconContainer>
-                    <GithubText color={colorScheme === "dark" ? false : true}>
-                      1
-                    </GithubText>
-                    <GithubIconContainer>
-                      <RiMedalFill
-                        color={colorScheme === "dark" ? "#fff" : "#fff"}
-                      />
-                    </GithubIconContainer>
-                    <GithubText color={colorScheme === "dark" ? false : true}>
-                      1
-                    </GithubText>
-                    <GithubIconContainer>
-                      <RiMedalFill
-                        color={colorScheme === "dark" ? "#fff" : "#fff"}
-                      />
-                    </GithubIconContainer>
-                    <GithubText color={colorScheme === "dark" ? false : true}>
-                      100
-                    </GithubText>
-                  </StackOverflowContainer>
-                </HoverCard.Target>
-                <HoverCard.Dropdown
-                  style={{
-                    backgroundColor: colorScheme === "dark" ? "#fff" : "#000",
-                    color: "white",
-                    fontWeight: 600,
-                  }}
-                >
-                  <Text
-                    size="sm"
-                    color={colorScheme === "dark" ? "#000" : "#fff"}
-                  >
-                    My Stackoverflow reputation, gold, silver, and bronze medial
-                    I've aquired through my interactions with their site.
-                  </Text>
-                  <Flex direction="row" justify="flex-end">
-                    <Anchor href="https://mantine.dev/" target="_blank">
-                      View Account
-                    </Anchor>
-                  </Flex>
-                </HoverCard.Dropdown>
-              </HoverCard>
-            </Group>
+                  </Tooltip>
+                </motion.div>
+                <motion.div variants={item}>
+                  <Tooltip label="Linkedin" withArrow>
+                    <ActionIcon
+                      color="blue"
+                      radius="xl"
+                      variant="filled"
+                      size="lg"
+                    >
+                      <AiFillLinkedin />
+                    </ActionIcon>
+                  </Tooltip>
+                </motion.div>
+                <motion.div variants={item}>
+                  <HoverCard width={280} shadow="md" withArrow>
+                    <HoverCard.Target>
+                      <GithubContainer
+                        color={colorScheme === "dark" ? true : false}
+                      >
+                        <ActionIcon
+                          color="gray"
+                          radius="xl"
+                          variant="filled"
+                          size="lg"
+                        >
+                          <AiFillGithub />
+                        </ActionIcon>
+                        <GithubIconContainer>
+                          <AiOutlineBranches color="#fff" />
+                        </GithubIconContainer>
+                        <GithubText
+                          color={colorScheme === "dark" ? true : false}
+                        >
+                          1
+                        </GithubText>
+                        <GithubIconContainer>
+                          <AiTwotoneStar color="#fff" />
+                        </GithubIconContainer>
+                        <GithubText
+                          color={colorScheme === "dark" ? true : false}
+                        >
+                          100
+                        </GithubText>
+                      </GithubContainer>
+                    </HoverCard.Target>
+                    <HoverCard.Dropdown
+                      style={{
+                        backgroundColor:
+                          colorScheme === "dark" ? "#fff" : "#000",
+                        color: "white",
+                        fontWeight: 600,
+                      }}
+                    >
+                      <Text
+                        size="sm"
+                        color={colorScheme === "dark" ? "#000" : "#fff"}
+                      >
+                        Stackoverflow reputation, gold, silver, and bronze
+                        medial I've aquired through my interactions with their
+                        site.
+                      </Text>
+                      <Flex direction="row" justify="flex-end">
+                        <Anchor href="https://mantine.dev/" target="_blank">
+                          View Account
+                        </Anchor>
+                      </Flex>
+                    </HoverCard.Dropdown>
+                  </HoverCard>
+                </motion.div>
+                <motion.div variants={item}>
+                  <HoverCard width={280} shadow="md" withArrow>
+                    <HoverCard.Target>
+                      <StackOverflowContainer
+                        color={colorScheme === "dark" ? true : false}
+                      >
+                        <ActionIcon
+                          color="orange"
+                          radius="xl"
+                          variant="filled"
+                          size="lg"
+                        >
+                          <SiStackoverflow />
+                        </ActionIcon>
+                        <GithubIconContainer>
+                          <RiMedalFill
+                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                          />
+                        </GithubIconContainer>
+                        <GithubText
+                          color={colorScheme === "dark" ? false : true}
+                        >
+                          1
+                        </GithubText>
+                        <GithubIconContainer>
+                          <RiMedalFill
+                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                          />
+                        </GithubIconContainer>
+                        <GithubText
+                          color={colorScheme === "dark" ? false : true}
+                        >
+                          1
+                        </GithubText>
+                        <GithubIconContainer>
+                          <RiMedalFill
+                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                          />
+                        </GithubIconContainer>
+                        <GithubText
+                          color={colorScheme === "dark" ? false : true}
+                        >
+                          100
+                        </GithubText>
+                      </StackOverflowContainer>
+                    </HoverCard.Target>
+                    <HoverCard.Dropdown
+                      style={{
+                        backgroundColor:
+                          colorScheme === "dark" ? "#fff" : "#000",
+                        color: "white",
+                        fontWeight: 600,
+                      }}
+                    >
+                      <Text
+                        size="sm"
+                        color={colorScheme === "dark" ? "#000" : "#fff"}
+                      >
+                        My Stackoverflow reputation, gold, silver, and bronze
+                        medial I've aquired through my interactions with their
+                        site.
+                      </Text>
+                      <Flex direction="row" justify="flex-end">
+                        <Anchor href="https://mantine.dev/" target="_blank">
+                          View Account
+                        </Anchor>
+                      </Flex>
+                    </HoverCard.Dropdown>
+                  </HoverCard>
+                </motion.div>
+              </Group>
+            </motion.div>
           </Flex>
         </Flex>
         <Divider />
@@ -241,22 +280,50 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
           </Text>
         </Blockquote>
         <Divider />
-        <AboutHeaderText>Technical Competencies</AboutHeaderText>
-        <Group>
-          {technologies.map((technology) => {
-            return (
-              <Badge
-                key={technology.id}
-                color={technology.color}
-                size="sm"
-                radius="sm"
-                variant="filled"
-              >
-                {technology.name}
-              </Badge>
-            );
-          })}
-        </Group>
+        <Text sx={{ marginTop: 20 }} size="sm" weight={700}>
+          Technical Competencies
+        </Text>
+        <motion.div variants={container} initial="hidden" animate="visible">
+          <Group sx={{ marginTop: 10, marginBottom: 20 }}>
+            {technicalCompetencies.map((technology) => {
+              return (
+                <motion.div variants={item}>
+                  <Badge
+                    key={technology.id}
+                    color={technology.color}
+                    size="md"
+                    radius="xl"
+                    variant="filled"
+                  >
+                    {technology.name}
+                  </Badge>
+                </motion.div>
+              );
+            })}
+          </Group>
+        </motion.div>
+        <Text sx={{ marginTop: 30 }} size="sm" weight={700}>
+          Tools
+        </Text>
+        <motion.div variants={container} initial="hidden" animate="visible">
+          <Group sx={{ marginTop: 10, marginBottom: 20 }}>
+            {technologies.map((technology) => {
+              return (
+                <motion.div variants={item}>
+                  <Badge
+                    key={technology.id}
+                    color={technology.color}
+                    size="md"
+                    radius="xl"
+                    variant="filled"
+                  >
+                    {technology.name}
+                  </Badge>
+                </motion.div>
+              );
+            })}
+          </Group>
+        </motion.div>
       </Card>
     </AboutPageContainer>
   );

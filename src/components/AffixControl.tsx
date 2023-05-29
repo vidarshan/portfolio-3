@@ -12,13 +12,13 @@ const AffixControl = () => {
         {(transitionStyles) => (
           <ActionIcon
             size="lg"
-            color="blue"
+            color="lime"
             variant="filled"
             radius="xl"
             style={transitionStyles}
             onClick={() => scrollTo({ y: 0 })}
           >
-            <BiArrowToTop size={20} color="white" />
+            <BiArrowToTop size={20} />
           </ActionIcon>
         )}
       </Transition>

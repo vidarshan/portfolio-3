@@ -13,8 +13,8 @@ export const technologies = [
   },
   {
     id: 3,
-    name: "Python",
-    color: "yellow",
+    name: "Swift",
+    color: "orange",
     type: "language",
   },
   {
@@ -54,21 +54,9 @@ export const technologies = [
     type: "other",
   },
   {
-    id: 10,
-    name: "Postgres",
-    color: "blue",
-    type: "other",
-  },
-  {
     id: 11,
     name: "Mongo DB",
     color: "green",
-    type: "other",
-  },
-  {
-    id: 12,
-    name: "Bootstrap",
-    color: "indigo",
     type: "other",
   },
   {
@@ -84,21 +72,9 @@ export const technologies = [
     type: "other",
   },
   {
-    id: 15,
-    name: "Material Design",
-    color: "pink",
-    type: "other",
-  },
-  {
     id: 16,
-    name: "SCSS",
+    name: "CSS",
     color: "pink",
-    type: "other",
-  },
-  {
-    id: 17,
-    name: "Semantic UI",
-    color: "orange",
     type: "other",
   },
   {
@@ -120,12 +96,6 @@ export const technologies = [
     type: "other",
   },
   {
-    id: 21,
-    name: "Redis",
-    color: "red",
-    type: "other",
-  },
-  {
     id: 22,
     name: "CI/CD",
     color: "red",
@@ -135,12 +105,6 @@ export const technologies = [
     id: 23,
     name: "Version Control",
     color: "green",
-    type: "other",
-  },
-  {
-    id: 24,
-    name: "Strapi",
-    color: "indigo",
     type: "other",
   },
   {
@@ -160,5 +124,28 @@ export const technologies = [
     name: "Styled Components",
     color: "pink",
     type: "other",
+  },
+];
+
+export const technicalCompetencies = [
+  {
+    id: 1,
+    name: "Frontend Web Development with React",
+    color: "blue",
+  },
+  {
+    id: 2,
+    name: "Cross Platform App Development with React Native",
+    color: "teal",
+  },
+  {
+    id: 3,
+    name: "Native iOS App Development",
+    color: "orange",
+  },
+  {
+    id: 3,
+    name: "Backend API Development with Node JS",
+    color: "pink",
   },
 ];

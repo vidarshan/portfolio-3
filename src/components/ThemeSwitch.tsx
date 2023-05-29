@@ -12,12 +12,16 @@ const ThemeSwitch = () => {
   return (
     <ActionIcon
       size="md"
-      radius="sm"
+      radius="xl"
       color="yellow"
       variant="filled"
       onClick={() => toggleColorScheme()}
     >
-      {colorScheme === "dark" ? <BiMoon /> : <BiSun />}
+      {colorScheme === "dark" ? (
+        <BiMoon color="#000" />
+      ) : (
+        <BiSun color="#000" />
+      )}
     </ActionIcon>
   );
 };
