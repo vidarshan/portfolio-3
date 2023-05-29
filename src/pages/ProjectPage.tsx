@@ -32,7 +32,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
       </Text>
       <Box sx={{ marginBottom: 30 }}>
         <SegmentedControl
-          radius="md"
+          radius="xl"
           value={selectedSegment}
           onChange={(e) => setSelectedSegment(e)}
           transitionTimingFunction="linear"
@@ -64,7 +64,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
           {projects.map((project) => {
             return (
               <Grid.Col key={project.id} xs={12} sm={6} md={6} lg={6} xl={6}>
-                <Card shadow="xs" padding="sm" radius="md" withBorder>
+                <Card padding="sm" radius="lg" withBorder>
                   <Card.Section sx={{ position: "relative" }}>
                     <ActionIcon
                       sx={{
@@ -73,9 +73,9 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                         right: 8,
                         top: 8,
                       }}
-                      color="blue"
+                      color="gray"
                       variant="filled"
-                      radius="sm"
+                      radius="xl"
                       size="lg"
                     >
                       <BiMobileAlt />
@@ -88,9 +88,9 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                         top: 8,
                         marginRight: 10,
                       }}
-                      color="blue"
+                      color="teal"
                       variant="filled"
-                      radius="sm"
+                      radius="xl"
                       size="lg"
                     >
                       <SiGithub />
@@ -99,7 +99,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                   </Card.Section>
                   <Group position="apart" mt="md" mb="xs">
                     <Text weight={700}>{project.name}</Text>
-                    <Badge color="pink" variant="filled" radius="sm">
+                    <Badge color="pink" variant="filled" radius="xl">
                       {project.tags}
                     </Badge>
                   </Group>
@@ -122,7 +122,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                           color={tech.color}
                           size="sm"
                           variant="filled"
-                          radius="sm"
+                          radius="xl"
                         >
                           {tech.name}
                         </Badge>
@@ -135,7 +135,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
           })}
         </Grid>
       ) : (
-        <Card shadow="sm" radius="md" withBorder>
+        <Card radius="lg" withBorder>
           <Flex direction={largeScreen ? "row" : "column"}>
             <Image
               src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
@@ -177,9 +177,9 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                 >
                   <ActionIcon
                     mr={10}
-                    color="yellow"
+                    color="teal"
                     variant="filled"
-                    radius="xl"
+                    radius="lg"
                     size="lg"
                   >
                     <BiLinkExternal />

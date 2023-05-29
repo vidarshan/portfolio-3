@@ -25,17 +25,16 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
         return (
           <Card
             key={index}
-            mt={20}
-            shadow="xs"
+            mt={30}
             padding="sm"
-            radius="md"
+            radius="lg"
             withBorder
           >
             <Flex direction="row" align="center" justify="space-between">
               <Flex direction="row" align="center">
                 <ThemeIcon
-                  color="yellow"
-                  radius="sm"
+                  color="teal"
+                  radius="xl"
                   size="md"
                   variant="filled"
                   sx={{ marginRight: 10 }}
@@ -49,7 +48,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                   <Text color="dimmed" size="xs" weight={800} tt="uppercase">
                     {item.contribution}
                   </Text>
-                  <Text color="yellow" weight={700} size="sm">
+                  <Text color="teal" weight={700} size="sm">
                     {item.company}
                   </Text>
                   <Text size="xs" weight={700} mt={4}>
@@ -75,7 +74,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                       color={competency.color}
                       size="md"
                       variant="filled"
-                      radius="sm"
+                      radius="xl"
                     >
                       {competency.name}
                     </Badge>

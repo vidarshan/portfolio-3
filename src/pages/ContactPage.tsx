@@ -112,13 +112,13 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
           <Text mb={20} weight={600} size={40}>
             Reach Out
           </Text>
-          <Card shadow="sm" radius="md" withBorder>
+          <Card radius="lg" withBorder>
             <form onSubmit={form.onSubmit((values) => sendEmail(values))}>
               <Text sx={{ marginBottom: 30 }} size="sm" weight={700}>
                 Send me a message
               </Text>
               <TextInput
-                radius="sm"
+                radius="md"
                 label="Your Email"
                 placeholder="Email address"
                 {...form.getInputProps("email")}
@@ -126,7 +126,7 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
               />
               <Textarea
                 mt={20}
-                radius="sm"
+                radius="md"
                 placeholder="Your message"
                 label="Your message"
                 {...form.getInputProps("message")}
@@ -136,7 +136,7 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
                 <Group>
                   <ActionIcon
                     size="lg"
-                    radius="sm"
+                    radius="md"
                     color="gray"
                     variant="filled"
                     onClick={() => clearForm()}
@@ -145,9 +145,9 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
                   </ActionIcon>
                   <Button
                     size="sm"
-                    radius="sm"
+                    radius="md"
                     color="yellow"
-                    leftIcon={<IoSend color="black" />}
+                    leftIcon={<IoSend />}
                     variant="filled"
                     type="submit"
                   >
