@@ -31,77 +31,41 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
   console.log("🚀 ~ file: NavigationBar.tsx:27 ~ largeScreen:", largeScreen);
 
   return (
-    <>
-      {largeScreen ? (
-        <NavigationBarContainer>
-          <NavigationBarInnerContainer>
-            <Link activeClass="active" smooth spy to="home">
-              <NavigationItem
-                size="md"
-                radius="sm"
-                color="dark"
-                variant="filled"
-              >
-                <BiHome size={18} />
-              </NavigationItem>
-            </Link>
-            <Link activeClass="active" smooth spy to="about">
-              <NavigationItem
-                size="md"
-                radius="sm"
-                color="dark"
-                variant="filled"
-              >
-                <BiUserCircle size={18} />
-              </NavigationItem>
-            </Link>
-            <Link activeClass="active" smooth spy to="work">
-              <NavigationItem
-                size="md"
-                radius="sm"
-                color="dark"
-                variant="filled"
-              >
-                <BiBriefcase size={18} />
-              </NavigationItem>
-            </Link>
-            <Link activeClass="active" smooth spy to="project">
-              <NavigationItem
-                size="md"
-                radius="sm"
-                color="dark"
-                variant="filled"
-              >
-                <BiGrid size={18} />
-              </NavigationItem>
-            </Link>
-            <Link activeClass="active" smooth spy to="testimonial">
-              <NavigationItem
-                size="md"
-                radius="sm"
-                color="dark"
-                variant="filled"
-              >
-                <BiTrophy size={18} />
-              </NavigationItem>
-            </Link>
-            <Link activeClass="active" smooth spy to="contact">
-              <NavigationItem
-                size="md"
-                radius="sm"
-                color="dark"
-                variant="filled"
-              >
-                <BiMessage size={18} />
-              </NavigationItem>
-            </Link>
-            <ThemeSwitch />
-          </NavigationBarInnerContainer>
-        </NavigationBarContainer>
-      ) : (
-        <></>
-      )}
-    </>
+    <NavigationBarContainer>
+      <NavigationBarInnerContainer>
+        <Link activeClass="active" smooth spy to="home">
+          <NavigationItem size="md" radius="sm" color="dark" variant="filled">
+            <BiHome size={18} />
+          </NavigationItem>
+        </Link>
+        <Link activeClass="active" smooth spy to="about">
+          <NavigationItem size="md" radius="sm" color="dark" variant="filled">
+            <BiUserCircle size={18} />
+          </NavigationItem>
+        </Link>
+        <Link activeClass="active" smooth spy to="work">
+          <NavigationItem size="md" radius="sm" color="dark" variant="filled">
+            <BiBriefcase size={18} />
+          </NavigationItem>
+        </Link>
+        <Link activeClass="active" smooth spy to="project">
+          <NavigationItem size="md" radius="sm" color="dark" variant="filled">
+            <BiGrid size={18} />
+          </NavigationItem>
+        </Link>
+        <Link activeClass="active" smooth spy to="testimonial">
+          <NavigationItem size="md" radius="sm" color="dark" variant="filled">
+            <BiTrophy size={18} />
+          </NavigationItem>
+        </Link>
+        <Link activeClass="active" smooth spy to="contact">
+          <NavigationItem size="md" radius="sm" color="dark" variant="filled">
+            <BiMessage size={18} />
+          </NavigationItem>
+        </Link>
+        <ThemeSwitch />
+      </NavigationBarInnerContainer>
+    </NavigationBarContainer>
   );
 };
 

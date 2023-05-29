@@ -31,12 +31,13 @@ import {
   AiOutlineBranches,
   AiTwotoneStar,
 } from "react-icons/ai";
-import { useLocalStorage } from "@mantine/hooks";
+import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import { RiMedalFill } from "react-icons/ri";
 import { ImQuotesLeft } from "react-icons/im";
 import { technologies } from "../data/competencies";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {
+  const largeScreen = useMediaQuery("(min-width: 700px)");
   const [colorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
@@ -50,10 +51,12 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
       </Text>
       <Card radius="md" shadow="xs" withBorder>
         <Flex
-          sx={{ marginBottom: 10 }}
-          align="center"
+          sx={{
+            marginBottom: 10,
+          }}
+          align={largeScreen ? "center" : "flex-start"}
           justify="space-between"
-          direction="row"
+          direction={largeScreen ? "row" : "column"}
         >
           <Flex align="center">
             <Avatar
@@ -75,8 +78,14 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
               </Text>
             </Flex>
           </Flex>
-
-          <Flex sx={{ marginLeft: 10 }} direction="row" align="center">
+          <Flex
+            sx={{
+              marginLeft: largeScreen ? 10 : 0,
+              marginTop: largeScreen ? 0 : 10,
+            }}
+            direction="row"
+            align="center"
+          >
             <Group>
               <Tooltip label="Download resume" withArrow>
                 <ActionIcon color="gray" radius="sm" variant="filled" size="lg">

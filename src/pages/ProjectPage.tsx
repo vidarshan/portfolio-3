@@ -20,10 +20,11 @@ import { GrProjects, GrList } from "react-icons/gr";
 import { SiGithub } from "react-icons/si";
 import { projects } from "../data/projects";
 import f from "../images/placeholder.png";
+import { useMediaQuery } from "@mantine/hooks";
 
 const ProjectPage: FC<IProjectPage> = ({ id }) => {
   const [selectedSegment, setSelectedSegment] = useState("projects");
-
+  const largeScreen = useMediaQuery("(min-width: 700px)");
   return (
     <ProjectPageContainer id={id}>
       <Text size={32} weight={700}>
@@ -135,7 +136,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
         </Grid>
       ) : (
         <Card shadow="sm" radius="md" withBorder>
-          <Flex>
+          <Flex direction={largeScreen ? "row" : "column"}>
             <Image
               src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
               height={80}
@@ -145,14 +146,21 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
             />
             <Flex sx={{ width: "100%" }} align="center">
               <Flex
-                align="center"
+                direction={largeScreen ? "row" : "column"}
+                align={largeScreen ? "center" : "flex-start"}
                 justify="space-between"
                 sx={{ width: "100%" }}
-                ml={26}
+                ml={largeScreen ? 26 : 0}
               >
                 <Flex direction="column">
-                  <Text weight={800}>Find my stay</Text>{" "}
-                  <Text align="justify" weight={500}>
+                  <Text weight={800} sx={{ marginTop: largeScreen ? 0 : 5 }}>
+                    Find my stay
+                  </Text>{" "}
+                  <Text
+                    sx={{ marginTop: largeScreen ? 0 : 5 }}
+                    align="justify"
+                    weight={500}
+                  >
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Minima mollitia ullam, molestias corporis odio quisquam
                     repellat eius qui saepe? Aut explicabo facere magni iusto
@@ -160,7 +168,13 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                     totam
                   </Text>{" "}
                 </Flex>
-                <Flex sx={{ marginLeft: 40 }}>
+                <Flex
+                  justify="flex-start"
+                  sx={{
+                    marginLeft: largeScreen ? 40 : 0,
+                    marginTop: largeScreen ? 0 : 10,
+                  }}
+                >
                   <ActionIcon
                     mr={10}
                     color="yellow"

@@ -6,7 +6,7 @@ export const AboutPageContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const AboutHeaderText = styled(Text)`
