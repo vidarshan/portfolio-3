@@ -28,7 +28,7 @@ export const GithubContainer = styled(Box)<ICustomChip>`
           background-color: #868e96;
         `};
   width: fit-content;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   padding: 0;
 `;
 
@@ -46,7 +46,7 @@ export const StackOverflowContainer = styled(Box)<ICustomChip>`
         `};
 
   width: fit-content;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   padding: 0;
 `;
 

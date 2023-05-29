@@ -48,7 +48,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
       <Text size={32} weight={700}>
         About Me
       </Text>
-      <Card radius="lg" shadow="xl" withBorder>
+      <Card radius="md" shadow="xs" withBorder>
         <Flex
           sx={{ marginBottom: 10 }}
           align="center"
@@ -79,19 +79,19 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
           <Flex sx={{ marginLeft: 10 }} direction="row" align="center">
             <Group>
               <Tooltip label="Download resume" withArrow>
-                <ActionIcon color="gray" radius="xl" variant="filled" size="lg">
+                <ActionIcon color="gray" radius="sm" variant="filled" size="lg">
                   <HiOutlineDownload />
                 </ActionIcon>
               </Tooltip>
 
               <Tooltip label="Gmail" withArrow>
-                <ActionIcon color="red" radius="xl" variant="filled" size="lg">
+                <ActionIcon color="red" radius="sm" variant="filled" size="lg">
                   <SiGmail />
                 </ActionIcon>
               </Tooltip>
 
               <Tooltip label="Linkedin" withArrow>
-                <ActionIcon color="blue" radius="xl" variant="filled" size="lg">
+                <ActionIcon color="blue" radius="sm" variant="filled" size="lg">
                   <AiFillLinkedin />
                 </ActionIcon>
               </Tooltip>
@@ -102,7 +102,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   >
                     <ActionIcon
                       color="gray"
-                      radius="xl"
+                      radius="sm"
                       variant="filled"
                       size="lg"
                     >
@@ -151,7 +151,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   >
                     <ActionIcon
                       color="orange"
-                      radius="xl"
+                      radius="sm"
                       variant="filled"
                       size="lg"
                     >
@@ -220,7 +220,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
             <br />
             <br /> I'm currently working with javascript and typescript based
             frameworks such as React, React Native, Node JS, Express JS and much
-            more.
+            more. I'm also working with Swift and iOS related development tools.
             <br />
             <br /> My goal is to create high quality software products written
             with quality code and based on unique ideas, which will have a
@@ -240,6 +240,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                 key={technology.id}
                 color={technology.color}
                 size="sm"
+                radius="sm"
                 variant="filled"
               >
                 {technology.name}

@@ -31,7 +31,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
       </Text>
       <Box sx={{ marginBottom: 30 }}>
         <SegmentedControl
-          radius="xl"
+          radius="md"
           value={selectedSegment}
           onChange={(e) => setSelectedSegment(e)}
           transitionTimingFunction="linear"
@@ -63,7 +63,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
           {projects.map((project) => {
             return (
               <Grid.Col key={project.id} xs={12} sm={6} md={6} lg={6} xl={6}>
-                <Card shadow="xl" padding="sm" radius="lg" withBorder>
+                <Card shadow="xs" padding="sm" radius="md" withBorder>
                   <Card.Section sx={{ position: "relative" }}>
                     <ActionIcon
                       sx={{
@@ -74,7 +74,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                       }}
                       color="blue"
                       variant="filled"
-                      radius="xl"
+                      radius="sm"
                       size="lg"
                     >
                       <BiMobileAlt />
@@ -89,7 +89,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                       }}
                       color="blue"
                       variant="filled"
-                      radius="xl"
+                      radius="sm"
                       size="lg"
                     >
                       <SiGithub />
@@ -98,7 +98,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                   </Card.Section>
                   <Group position="apart" mt="md" mb="xs">
                     <Text weight={700}>{project.name}</Text>
-                    <Badge color="pink" variant="filled">
+                    <Badge color="pink" variant="filled" radius="sm">
                       {project.tags}
                     </Badge>
                   </Group>
@@ -121,6 +121,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                           color={tech.color}
                           size="sm"
                           variant="filled"
+                          radius="sm"
                         >
                           {tech.name}
                         </Badge>

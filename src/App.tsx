@@ -15,7 +15,7 @@ import {
   Container,
   MantineProvider,
 } from "@mantine/core";
-import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import { useHotkeys, useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { Notifications } from "@mantine/notifications";
 
@@ -25,6 +25,7 @@ const App = () => {
     defaultValue: "light",
     getInitialValueInEffect: true,
   });
+  const largeScreen = useMediaQuery("(min-width: 60em)");
   const toggleColorScheme = (value?: ColorScheme) =>
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
 
@@ -36,15 +37,29 @@ const App = () => {
       toggleColorScheme={toggleColorScheme}
     >
       <MantineProvider
-        theme={{ colorScheme }}
+        theme={{
+          colorScheme,
+          components: {
+            Container: {
+              defaultProps: {
+                sizes: {
+                  xs: 540,
+                  sm: 720,
+                  md: 960,
+                  lg: 1140,
+                  xl: 1320,
+                },
+              },
+            },
+          },
+        }}
         withGlobalStyles
         withNormalizeCSS
       >
         <Notifications position="bottom-left" />
         <AppContainer>
-          <ThemeSwitch />
           <AffixControl />
-          <NavigationBar />
+          <NavigationBar larger={largeScreen} />
           <Container size="lg">
             <HomePage id="home" />
             <AboutPage id="about" />

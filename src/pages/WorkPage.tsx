@@ -23,12 +23,19 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
       </Text>
       {(work || []).map((item, index) => {
         return (
-          <Card key={index} mt={20} shadow="xl" padding="sm" radius="lg" withBorder>
+          <Card
+            key={index}
+            mt={20}
+            shadow="xs"
+            padding="sm"
+            radius="md"
+            withBorder
+          >
             <Flex direction="row" align="center" justify="space-between">
               <Flex direction="row" align="center">
                 <ThemeIcon
                   color="yellow"
-                  radius="xl"
+                  radius="sm"
                   size="md"
                   variant="filled"
                   sx={{ marginRight: 10 }}
@@ -68,6 +75,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                       color={competency.color}
                       size="md"
                       variant="filled"
+                      radius="sm"
                     >
                       {competency.name}
                     </Badge>

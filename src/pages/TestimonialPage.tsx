@@ -28,7 +28,7 @@ const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
         {testimonials.map((item) => {
           return (
             <Grid.Col key={item.id} xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Card shadow="sm" radius="lg" withBorder>
+              <Card shadow="sm" radius="md" withBorder>
                 <Flex direction="row" justify="space-between">
                   <Flex>
                     <Avatar
@@ -55,7 +55,7 @@ const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
                   >
                     <ActionIcon
                       color={item.type === "website" ? "orange" : "blue"}
-                      radius="xl"
+                      radius="sm"
                       variant="filled"
                       size="lg"
                     >
