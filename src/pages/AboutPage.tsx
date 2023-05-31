@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { IAboutPage } from "../interfaces/IAboutPage";
 import {
   AboutPageContainer,
@@ -36,14 +36,23 @@ import { ImQuotesLeft } from "react-icons/im";
 import { technicalCompetencies, technologies } from "../data/competencies";
 import { motion } from "framer-motion";
 import { container, item } from "../animations";
+import { useDispatch, useSelector } from "react-redux";
+import { getGithubInfo } from "../store/github";
+import { useAppDispatch } from "../store/store";
+import { getGithubStats } from "../store/slices/githubSlices";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {
+  const dispatch = useAppDispatch();
   const largeScreen = useMediaQuery("(min-width: 700px)");
   const [colorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
     getInitialValueInEffect: true,
   });
+
+  useEffect(() => {
+    dispatch(getGithubStats());
+  }, [dispatch]);
 
   return (
     <AboutPageContainer id={id}>

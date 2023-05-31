@@ -18,6 +18,8 @@ import {
 import { useHotkeys, useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import ThemeSwitch from "./components/ThemeSwitch";
 import { Notifications } from "@mantine/notifications";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const App = () => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -32,45 +34,47 @@ const App = () => {
   useHotkeys([["mod+J", () => toggleColorScheme()]]);
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
-      <MantineProvider
-        theme={{
-          colorScheme,
-          components: {
-            Container: {
-              defaultProps: {
-                sizes: {
-                  xs: 540,
-                  sm: 720,
-                  md: 960,
-                  lg: 1140,
-                  xl: 1320,
+    <Provider store={store}>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
+      >
+        <MantineProvider
+          theme={{
+            colorScheme,
+            components: {
+              Container: {
+                defaultProps: {
+                  sizes: {
+                    xs: 540,
+                    sm: 720,
+                    md: 960,
+                    lg: 1140,
+                    xl: 1320,
+                  },
                 },
               },
             },
-          },
-        }}
-        withGlobalStyles
-        withNormalizeCSS
-      >
-        <Notifications position="bottom-left" />
-        <AppContainer>
-          <AffixControl />
-          <NavigationBar larger={largeScreen} />
-          <Container size="lg">
-            <HomePage id="home" />
-            <AboutPage id="about" />
-            <WorkPage id="work" />
-            <ProjectPage id="project" />
-            <TestimonialPage id="testimonial" />
-            <ContactPage id="contact" />
-          </Container>
-        </AppContainer>
-      </MantineProvider>
-    </ColorSchemeProvider>
+          }}
+          withGlobalStyles
+          withNormalizeCSS
+        >
+          <Notifications position="bottom-left" />
+          <AppContainer>
+            <AffixControl />
+            <NavigationBar larger={largeScreen} />
+            <Container size="lg">
+              <HomePage id="home" />
+              <AboutPage id="about" />
+              <WorkPage id="work" />
+              <ProjectPage id="project" />
+              <TestimonialPage id="testimonial" />
+              <ContactPage id="contact" />
+            </Container>
+          </AppContainer>
+        </MantineProvider>
+      </ColorSchemeProvider>
+    </Provider>
   );
 };
 

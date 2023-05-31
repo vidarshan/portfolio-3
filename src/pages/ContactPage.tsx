@@ -61,11 +61,18 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
         }),
       });
 
+      // const emailres = await emailjs.send(
+      //   process?.env?.REACT_APP_EMAILJS_SERVICE as string,
+      //   process?.env?.REACT_APP_EMAILJS_TEMPLATE as string,
+      //   formInfo as any,
+      //   process?.env?.REACT_APP_EMAILJS_USER as string
+      // );
+
       const emailres = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE as string,
-        process.env.REACT_APP_EMAILJS_TEMPLATE as string,
+        "" as string,
+        "" as string,
         formInfo as any,
-        process.env.REACT_APP_EMAILJS_USER as string
+        "" as string
       );
 
       if (emailres && emailres.status === 200) {
