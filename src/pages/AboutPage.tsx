@@ -1,8 +1,7 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { IAboutPage } from "../interfaces/IAboutPage";
 import {
   AboutPageContainer,
-  GithubContainer,
   GithubIconContainer,
   GithubText,
   StackOverflowContainer,
@@ -24,35 +23,24 @@ import {
 } from "@mantine/core";
 import { HiOutlineDownload } from "react-icons/hi";
 import { SiStackoverflow, SiGmail } from "react-icons/si";
-import {
-  AiFillLinkedin,
-  AiFillGithub,
-  AiOutlineBranches,
-  AiTwotoneStar,
-} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
-import { RiMedalFill } from "react-icons/ri";
+import { RiArrowUpCircleFill, RiMedalFill } from "react-icons/ri";
 import { ImQuotesLeft } from "react-icons/im";
 import { technicalCompetencies, technologies } from "../data/competencies";
 import { motion } from "framer-motion";
 import { container, item } from "../animations";
-import { useDispatch, useSelector } from "react-redux";
-import { getGithubInfo } from "../store/github";
-import { useAppDispatch } from "../store/store";
-import { getGithubStats } from "../store/slices/githubSlices";
+import { useAppDispatch, useAppSelector } from "../store/store";
+import { BiMedal, BiTrophy } from "react-icons/bi";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {
-  const dispatch = useAppDispatch();
   const largeScreen = useMediaQuery("(min-width: 700px)");
+  const { stackoverflow } = useAppSelector((state) => state.stats);
   const [colorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
     getInitialValueInEffect: true,
   });
-
-  useEffect(() => {
-    dispatch(getGithubStats());
-  }, [dispatch]);
 
   return (
     <AboutPageContainer id={id}>
@@ -137,34 +125,14 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                 <motion.div variants={item}>
                   <HoverCard width={280} shadow="md" withArrow>
                     <HoverCard.Target>
-                      <GithubContainer
-                        color={colorScheme === "dark" ? true : false}
+                      <ActionIcon
+                        color="dark"
+                        radius="xl"
+                        variant="filled"
+                        size="lg"
                       >
-                        <ActionIcon
-                          color="gray"
-                          radius="xl"
-                          variant="filled"
-                          size="lg"
-                        >
-                          <AiFillGithub />
-                        </ActionIcon>
-                        <GithubIconContainer>
-                          <AiOutlineBranches color="#fff" />
-                        </GithubIconContainer>
-                        <GithubText
-                          color={colorScheme === "dark" ? true : false}
-                        >
-                          1
-                        </GithubText>
-                        <GithubIconContainer>
-                          <AiTwotoneStar color="#fff" />
-                        </GithubIconContainer>
-                        <GithubText
-                          color={colorScheme === "dark" ? true : false}
-                        >
-                          100
-                        </GithubText>
-                      </GithubContainer>
+                        <AiFillGithub />
+                      </ActionIcon>
                     </HoverCard.Target>
                     <HoverCard.Dropdown
                       style={{
@@ -205,34 +173,44 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                           <SiStackoverflow />
                         </ActionIcon>
                         <GithubIconContainer>
-                          <RiMedalFill
+                          <BiTrophy
                             color={colorScheme === "dark" ? "#fff" : "#fff"}
                           />
                         </GithubIconContainer>
                         <GithubText
                           color={colorScheme === "dark" ? false : true}
                         >
-                          1
+                          {stackoverflow.gold}
                         </GithubText>
                         <GithubIconContainer>
-                          <RiMedalFill
+                          <BiMedal
                             color={colorScheme === "dark" ? "#fff" : "#fff"}
                           />
                         </GithubIconContainer>
                         <GithubText
                           color={colorScheme === "dark" ? false : true}
                         >
-                          1
+                          {stackoverflow.gold}
                         </GithubText>
                         <GithubIconContainer>
-                          <RiMedalFill
+                          <BiMedal
                             color={colorScheme === "dark" ? "#fff" : "#fff"}
                           />
                         </GithubIconContainer>
                         <GithubText
                           color={colorScheme === "dark" ? false : true}
                         >
-                          100
+                          {stackoverflow.silver}
+                        </GithubText>
+                        <GithubIconContainer>
+                          <BiMedal
+                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                          />
+                        </GithubIconContainer>
+                        <GithubText
+                          color={colorScheme === "dark" ? false : true}
+                        >
+                          {stackoverflow.bronze}
                         </GithubText>
                       </StackOverflowContainer>
                     </HoverCard.Target>

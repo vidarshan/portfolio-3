@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { GithubSlice } from "./slices/githubSlices";
-import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
+import { StatsSlice } from "./slices/statsSlice";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({
   reducer: {
-    github: GithubSlice.reducer,
+    stats: StatsSlice.reducer,
   },
 });
 export const useAppDispatch: () => typeof store.dispatch = useDispatch;
