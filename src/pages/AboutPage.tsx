@@ -12,6 +12,7 @@ import {
   Avatar,
   Badge,
   Blockquote,
+  Box,
   Card,
   ColorScheme,
   Divider,
@@ -243,29 +244,32 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
           </Flex>
         </Flex>
         <Divider />
-        <Blockquote icon={<ImQuotesLeft color="#c2c2c2" />} cite="">
-          <Text size="md" weight={600}>
-            I'm a Software Engineer who likes to see things being built one line
-            of code at a time. Well organised and prefers to have incremental
-            self-development based on the knowledge gained. <br />
-            <br /> I have nearly 3 years of industry experience, and I am
-            gaining more knowledge day-by-day, as I am a quick learner who likes
-            to implement and make use of the knowledge gained, in order to
-            create great things.
-            <br />
-            <br /> I'm currently working with javascript and typescript based
-            frameworks such as React, React Native, Node JS, Express JS and much
-            more. I'm also working with Swift and iOS related development tools.
-            <br />
-            <br /> My goal is to create high quality software products written
-            with quality code and based on unique ideas, which will have a
-            positive impact and make positive changes in the day-to-day lives of
-            people. <br />
-            <br />
-            I'm also working towards my target of becoming a great software
-            engineer among the best software engineers."
-          </Text>
-        </Blockquote>
+        <Box mt={10} mb={10}>
+          <Blockquote icon={<ImQuotesLeft color="#c2c2c2" />} cite="">
+            <Text size={15} weight={500}>
+              I'm a Software Engineer who likes to see things being built one
+              line of code at a time. Well organised and prefers to have
+              incremental self-development based on the knowledge gained. <br />
+              <br /> I have nearly 3 years of industry experience, and I am
+              gaining more knowledge day-by-day, as I am a quick learner who
+              likes to implement and make use of the knowledge gained, in order
+              to create great things.
+              <br />
+              <br /> I'm currently working with javascript and typescript based
+              frameworks such as React, React Native, Node JS, Express JS and
+              much more. I'm also working with Swift and iOS related development
+              tools.
+              <br />
+              <br /> My goal is to create high quality software products written
+              with quality code and based on unique ideas, which will have a
+              positive impact and make positive changes in the day-to-day lives
+              of people. <br />
+              <br />
+              I'm also working towards my target of becoming a great software
+              engineer among the best software engineers."
+            </Text>
+          </Blockquote>
+        </Box>
         <Divider />
         <Text sx={{ marginTop: 20 }} size="sm" weight={700}>
           Technical Competencies
@@ -278,7 +282,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <Badge
                     key={technology.id}
                     color={technology.color}
-                    size="md"
+                    size="sm"
                     radius="xl"
                     variant="filled"
                   >
@@ -300,7 +304,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <Badge
                     key={technology.id}
                     color={technology.color}
-                    size="md"
+                    size="sm"
                     radius="xl"
                     variant="filled"
                   >

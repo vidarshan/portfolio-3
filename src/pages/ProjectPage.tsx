@@ -102,7 +102,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                     <Text td="underline" size={16} weight={700}>
                       {project.name}
                     </Text>
-                    <Badge color="pink" variant="filled" radius="xl">
+                    <Badge color="pink" variant="light" radius="xl">
                       {project.tags}
                     </Badge>
                   </Group>
@@ -123,7 +123,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                         <Badge
                           key={tech.id}
                           color={tech.color}
-                          size="sm"
+                          size="xs"
                           variant="filled"
                           radius="xl"
                         >
