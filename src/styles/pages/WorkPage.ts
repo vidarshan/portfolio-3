@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const WorkPageContainer = styled.section`
-  margin-bottom: 150px;
+  padding-top: 160px;
   .mantine-List-itemWrapper {
     font-weight: 600;
   }

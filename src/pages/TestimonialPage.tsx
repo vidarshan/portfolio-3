@@ -21,14 +21,14 @@ import { ImQuotesLeft } from "react-icons/im";
 const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
   return (
     <TestimonialPageContainer id={id}>
-      <Text mb={20} weight={600} size={40}>
+      <Text mb={40} size={32} weight={700}>
         Testimonials
       </Text>
       <Grid gutter={40}>
         {testimonials.map((item) => {
           return (
             <Grid.Col key={item.id} xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Card radius="lg" withBorder>
+              <Card radius="lg" shadow="md">
                 <Flex direction="row" justify="space-between">
                   <Flex>
                     <Avatar

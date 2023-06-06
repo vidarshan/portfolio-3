@@ -47,7 +47,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
       <Text size={32} weight={700}>
         About Me
       </Text>
-      <Card sx={{ marginTop: 30 }} radius="lg" withBorder>
+      <Card sx={{ marginTop: 30 }} radius="lg" shadow="md">
         <Flex
           sx={{
             marginBottom: 10,
@@ -89,7 +89,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                 <motion.div variants={item}>
                   <Tooltip label="Download resume" withArrow>
                     <ActionIcon
-                      color="pink"
+                      color="green"
                       radius="xl"
                       variant="filled"
                       size="lg"

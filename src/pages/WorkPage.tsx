@@ -23,13 +23,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
       </Text>
       {(work || []).map((item, index) => {
         return (
-          <Card
-            key={index}
-            mt={30}
-            padding="sm"
-            radius="lg"
-            withBorder
-          >
+          <Card key={index} mt={30} padding="sm" radius="lg" shadow="md">
             <Flex direction="row" align="center" justify="space-between">
               <Flex direction="row" align="center">
                 <ThemeIcon

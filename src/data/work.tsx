@@ -210,6 +210,16 @@ export const work = [
         name: "Jest",
         color: "green",
       },
+      {
+        id: 4,
+        name: "iOS",
+        color: "red",
+      },
+      {
+        id: 4,
+        name: "Android",
+        color: "green",
+      },
     ],
   },
 ];

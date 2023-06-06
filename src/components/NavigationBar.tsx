@@ -25,11 +25,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
 
   return (
     <NavigationBarContainer color={colorScheme === "dark" ? "#1A1B1E" : "#fff"}>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-      >
+      <motion.div variants={container} initial="hidden" animate="visible">
         <NavigationBarInnerContainer>
           <Link activeClass="active" smooth spy to="home">
             <motion.div variants={item}>
@@ -40,7 +36,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   color="teal"
                   variant="filled"
                 >
-                  <BiHome size={18} />
+                  <BiHome />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -54,7 +50,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   color="teal"
                   variant="filled"
                 >
-                  <BiUserCircle size={18} />
+                  <BiUserCircle />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -68,7 +64,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   color="teal"
                   variant="filled"
                 >
-                  <BiBriefcase size={18} />
+                  <BiBriefcase />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -82,7 +78,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   color="teal"
                   variant="filled"
                 >
-                  <BiGrid size={18} />
+                  <BiGrid />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -96,7 +92,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   color="teal"
                   variant="filled"
                 >
-                  <BiTrophy size={18} />
+                  <BiTrophy />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -110,7 +106,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   color="teal"
                   variant="filled"
                 >
-                  <BiMessage size={18} />
+                  <BiMessage />
                 </NavigationItem>
               </Tooltip>
             </motion.div>

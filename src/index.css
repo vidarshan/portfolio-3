@@ -38,11 +38,17 @@ div{
   font-family: 'Manrope', sans-serif !important;
 }
 
-.active > button > svg{
-border-bottom: 1px solid red;
+.active > div > button{
+background-color: #343A40;
 }
 
 
 .mantine-Tooltip-tooltip {
   font-weight: 700;
+}
+
+
+.mantine-Spoiler-control{
+  font-size: 14px;
+  font-weight: 500;
 }

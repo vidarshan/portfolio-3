@@ -116,10 +116,10 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
     <ContactPageContainer id={id}>
       <Flex sx={{ width: "100%" }} direction="column" justify="center">
         <Box id="reachOutSection">
-          <Text mb={20} weight={600} size={40}>
+          <Text mb={40} size={32} weight={700}>
             Reach Out
           </Text>
-          <Card radius="lg" withBorder>
+          <Card radius="lg" shadow="md">
             <form onSubmit={form.onSubmit((values) => sendEmail(values))}>
               <Text sx={{ marginBottom: 30 }} size="sm" weight={700}>
                 Send me a message
@@ -153,7 +153,7 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
                   <Button
                     size="sm"
                     radius="md"
-                    color="yellow"
+                    color="teal"
                     leftIcon={<IoSend />}
                     variant="filled"
                     type="submit"

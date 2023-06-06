@@ -21,6 +21,7 @@ import { SiGithub } from "react-icons/si";
 import { projects } from "../data/projects";
 import f from "../images/placeholder.png";
 import { useMediaQuery } from "@mantine/hooks";
+import { projectsArchive } from "../data/projectArchive";
 
 const ProjectPage: FC<IProjectPage> = ({ id }) => {
   const [selectedSegment, setSelectedSegment] = useState("projects");
@@ -60,11 +61,11 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
         />
       </Box>
       {selectedSegment === "projects" ? (
-        <Grid gutter={40}>
+        <Grid gutter={60}>
           {projects.map((project) => {
             return (
               <Grid.Col key={project.id} xs={12} sm={6} md={6} lg={6} xl={6}>
-                <Card padding="sm" radius="lg" withBorder>
+                <Card padding="sm" radius="lg" shadow="md">
                   <Card.Section sx={{ position: "relative" }}>
                     <ActionIcon
                       sx={{
@@ -95,21 +96,23 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                     >
                       <SiGithub />
                     </ActionIcon>
-                    <Image src={f} height={300} alt="Norway" />
+                    <Image src={project.image} height={300} alt="Norway" />
                   </Card.Section>
                   <Group position="apart" mt="md" mb="xs">
-                    <Text weight={700}>{project.name}</Text>
+                    <Text td="underline" size={16} weight={700}>
+                      {project.name}
+                    </Text>
                     <Badge color="pink" variant="filled" radius="xl">
                       {project.tags}
                     </Badge>
                   </Group>
                   <Group position="apart" mt="md" mb="xs">
                     <Spoiler
-                      maxHeight={120}
+                      maxHeight={90}
                       showLabel="Show more"
                       hideLabel="Hide"
                     >
-                      <Text weight={500} size={16}>
+                      <Text align="justify" weight={500} size={14}>
                         {project.description}
                       </Text>
                     </Spoiler>
@@ -135,69 +138,97 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
           })}
         </Grid>
       ) : (
-        <Card radius="lg" withBorder>
-          <Flex direction={largeScreen ? "row" : "column"}>
-            <Image
-              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-              height={80}
-              width={160}
-              alt="Norway"
-              radius="sm"
-            />
-            <Flex sx={{ width: "100%" }} align="center">
-              <Flex
-                direction={largeScreen ? "row" : "column"}
-                align={largeScreen ? "center" : "flex-start"}
-                justify="space-between"
-                sx={{ width: "100%" }}
-                ml={largeScreen ? 26 : 0}
-              >
-                <Flex direction="column">
-                  <Text weight={800} sx={{ marginTop: largeScreen ? 0 : 5 }}>
-                    Find my stay
-                  </Text>{" "}
-                  <Text
-                    sx={{ marginTop: largeScreen ? 0 : 5 }}
-                    align="justify"
-                    weight={500}
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minima mollitia ullam, molestias corporis odio quisquam
-                    repellat eius qui saepe? Aut explicabo facere magni iusto
-                    amet modi aspernatur quisquam odit voluptates molestiae
-                    totam
-                  </Text>{" "}
+        <>
+          {projectsArchive.map((archived) => {
+            return (
+              <Card radius="lg" withBorder mb={20}>
+                <Flex direction={largeScreen ? "row" : "column"}>
+                  <Flex direction="column" justify="center">
+                    <Image
+                      src={archived.image}
+                      height={80}
+                      width={160}
+                      alt="Norway"
+                      radius="sm"
+                    />
+                  </Flex>
+                  <Flex sx={{ width: "100%" }} align="center">
+                    <Flex
+                      direction={largeScreen ? "row" : "column"}
+                      align={largeScreen ? "center" : "flex-start"}
+                      justify="space-between"
+                      sx={{ width: "100%" }}
+                      ml={largeScreen ? 26 : 0}
+                    >
+                      <Flex direction="column">
+                        <Flex direction="column">
+                          <Text
+                            weight={800}
+                            sx={{ marginTop: largeScreen ? 0 : 5 }}
+                          >
+                            {archived.name}
+                          </Text>{" "}
+                          <Text
+                            sx={{ marginTop: largeScreen ? 0 : 5 }}
+                            align="justify"
+                            weight={500}
+                          >
+                            {archived.description}
+                          </Text>{" "}
+                        </Flex>
+
+                        <Flex direction="column" mt={10}>
+                          <Group>
+                            {archived.technologies.map((tech) => {
+                              return (
+                                <Badge
+                                  key={tech.id}
+                                  color={tech.color}
+                                  size="sm"
+                                  variant="filled"
+                                  radius="xl"
+                                >
+                                  {tech.name}
+                                </Badge>
+                              );
+                            })}
+                          </Group>
+                        </Flex>
+                      </Flex>
+
+                      <Flex
+                        justify="flex-start"
+                        sx={{
+                          marginLeft: largeScreen ? 40 : 0,
+                          marginTop: largeScreen ? 0 : 10,
+                        }}
+                      >
+                        <ActionIcon
+                          mr={10}
+                          color="teal"
+                          variant="filled"
+                          radius="lg"
+                          size="lg"
+                        >
+                          <BiLinkExternal />
+                        </ActionIcon>
+                        <ActionIcon
+                          mr={10}
+                          color="gray"
+                          variant="filled"
+                          radius="xl"
+                          size="lg"
+                        >
+                          <SiGithub />
+                        </ActionIcon>
+                      </Flex>
+                    </Flex>
+                  </Flex>
                 </Flex>
-                <Flex
-                  justify="flex-start"
-                  sx={{
-                    marginLeft: largeScreen ? 40 : 0,
-                    marginTop: largeScreen ? 0 : 10,
-                  }}
-                >
-                  <ActionIcon
-                    mr={10}
-                    color="teal"
-                    variant="filled"
-                    radius="lg"
-                    size="lg"
-                  >
-                    <BiLinkExternal />
-                  </ActionIcon>
-                  <ActionIcon
-                    mr={10}
-                    color="gray"
-                    variant="filled"
-                    radius="xl"
-                    size="lg"
-                  >
-                    <SiGithub />
-                  </ActionIcon>
-                </Flex>
-              </Flex>
-            </Flex>
-          </Flex>
-        </Card>
+              </Card>
+            );
+          })}
+        </>
       )}
     </ProjectPageContainer>
   );
