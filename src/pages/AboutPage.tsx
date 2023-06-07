@@ -23,7 +23,7 @@ import {
   Tooltip,
 } from "@mantine/core";
 import { HiOutlineDownload } from "react-icons/hi";
-import { SiStackoverflow, SiGmail } from "react-icons/si";
+import { SiStackoverflow, SiGmail, SiMaildotru } from "react-icons/si";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import { ImQuotesLeft } from "react-icons/im";
@@ -32,6 +32,8 @@ import { motion, useInView } from "framer-motion";
 import { container, item } from "../animations";
 import { useAppSelector } from "../store/store";
 import { BiMedal, BiTrophy } from "react-icons/bi";
+import { FiDownloadCloud } from "react-icons/fi";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {
   const ref = useRef(null);
@@ -49,7 +51,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
       <Text size={32} weight={700}>
         About Me
       </Text>
-      <Card sx={{ marginTop: 30 }} radius="lg" shadow="md">
+      <Card sx={{ marginTop: 30 }} radius="lg" shadow="lg" withBorder>
         <Flex
           ref={ref}
           sx={{
@@ -97,11 +99,11 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <Tooltip label="Download resume" withArrow>
                     <ActionIcon
                       color="green"
-                      radius="xl"
-                      variant="filled"
+                      radius="md"
+                      variant="light"
                       size="lg"
                     >
-                      <HiOutlineDownload />
+                      <FiDownloadCloud />
                     </ActionIcon>
                   </Tooltip>
                 </motion.div>
@@ -109,11 +111,11 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <Tooltip label="Gmail" withArrow>
                     <ActionIcon
                       color="red"
-                      radius="xl"
-                      variant="filled"
+                      radius="md"
+                      variant="light"
                       size="lg"
                     >
-                      <SiGmail />
+                      <SiMaildotru />
                     </ActionIcon>
                   </Tooltip>
                 </motion.div>
@@ -121,24 +123,19 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <Tooltip label="Linkedin" withArrow>
                     <ActionIcon
                       color="blue"
-                      radius="xl"
-                      variant="filled"
+                      radius="md"
+                      variant="light"
                       size="lg"
                     >
-                      <AiFillLinkedin />
+                      <BsLinkedin />
                     </ActionIcon>
                   </Tooltip>
                 </motion.div>
                 <motion.div variants={item}>
                   <HoverCard width={280} shadow="md" withArrow>
                     <HoverCard.Target>
-                      <ActionIcon
-                        color="dark"
-                        radius="xl"
-                        variant="filled"
-                        size="lg"
-                      >
-                        <AiFillGithub />
+                      <ActionIcon radius="md" variant="light" size="lg">
+                        <BsGithub />
                       </ActionIcon>
                     </HoverCard.Target>
                     <HoverCard.Dropdown
@@ -292,8 +289,8 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <Badge
                     key={technology.id}
                     color={technology.color}
-                    size="sm"
-                    radius="xl"
+                    size="md"
+                    radius="sm"
                     variant="filled"
                   >
                     {technology.name}
@@ -318,8 +315,8 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   <Badge
                     key={technology.id}
                     color={technology.color}
-                    size="sm"
-                    radius="xl"
+                    size="md"
+                    radius="sm"
                     variant="filled"
                   >
                     {technology.name}

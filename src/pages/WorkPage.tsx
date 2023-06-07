@@ -14,6 +14,7 @@ import {
   List,
   Text,
   ThemeIcon,
+  Tooltip,
 } from "@mantine/core";
 import { BiLinkExternal } from "react-icons/bi";
 import { work } from "../data/work";
@@ -38,12 +39,19 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
           {(work || []).map((item, index) => {
             return (
               <motion.div variants={framerItem}>
-                <Card key={index} mt={30} padding="sm" radius="lg" shadow="md">
+                <Card
+                  key={index}
+                  mt={30}
+                  padding="sm"
+                  radius="lg"
+                  shadow="sm"
+                  withBorder
+                >
                   <Flex direction="row" align="center" justify="space-between">
                     <Flex direction="row" align="center">
                       <ThemeIcon
                         color="teal"
-                        radius="xl"
+                        radius="md"
                         size="md"
                         variant="filled"
                         sx={{ marginRight: 10 }}
@@ -70,9 +78,11 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                         </Text>
                       </Flex>
                     </Flex>
-                    <ActionIcon color="red" radius="xl" variant="" size="sm">
-                      <BiLinkExternal />
-                    </ActionIcon>
+                    <Tooltip position="left" label="View Employer" withArrow>
+                      <ActionIcon color="red" radius="xl" variant="" size="sm">
+                        <BiLinkExternal />
+                      </ActionIcon>
+                    </Tooltip>
                   </Flex>
                   <Container>
                     <List size="sm" mt={25} mb={14}>
@@ -88,7 +98,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                             color={competency.color}
                             size="md"
                             variant="filled"
-                            radius="xl"
+                            radius="sm"
                           >
                             {competency.name}
                           </Badge>

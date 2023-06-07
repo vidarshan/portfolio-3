@@ -32,11 +32,11 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
               <Tooltip label="Home" withArrow>
                 <NavigationItem
                   size="md"
-                  radius="xl"
-                  color="teal"
-                  variant="filled"
+                  variant="light"
+                  radius="sm"
+                  color="blue"
                 >
-                  <BiHome />
+                  <BiHome size={16} />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -46,11 +46,11 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
               <Tooltip label="Profile" withArrow>
                 <NavigationItem
                   size="md"
-                  radius="xl"
-                  color="teal"
-                  variant="filled"
+                  variant="light"
+                  radius="sm"
+                  color="blue"
                 >
-                  <BiUserCircle />
+                  <BiUserCircle size={16} />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -60,11 +60,11 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
               <Tooltip label="Work" withArrow>
                 <NavigationItem
                   size="md"
-                  radius="xl"
-                  color="teal"
-                  variant="filled"
+                  variant="light"
+                  radius="sm"
+                  color="blue"
                 >
-                  <BiBriefcase />
+                  <BiBriefcase size={16} />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -74,11 +74,11 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
               <Tooltip label="Projects" withArrow>
                 <NavigationItem
                   size="md"
-                  radius="xl"
-                  color="teal"
-                  variant="filled"
+                  variant="light"
+                  radius="sm"
+                  color="blue"
                 >
-                  <BiGrid />
+                  <BiGrid size={16} />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -88,11 +88,11 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
               <Tooltip label="Testimonials" withArrow>
                 <NavigationItem
                   size="md"
-                  radius="xl"
-                  color="teal"
-                  variant="filled"
+                  variant="light"
+                  radius="sm"
+                  color="blue"
                 >
-                  <BiTrophy />
+                  <BiTrophy size={16} />
                 </NavigationItem>
               </Tooltip>
             </motion.div>
@@ -102,11 +102,11 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
               <Tooltip label="Reach out" withArrow>
                 <NavigationItem
                   size="md"
-                  radius="xl"
-                  color="teal"
-                  variant="filled"
+                  variant="light"
+                  radius="sm"
+                  color="blue"
                 >
-                  <BiMessage />
+                  <BiMessage size={16} />
                 </NavigationItem>
               </Tooltip>
             </motion.div>

@@ -26,7 +26,7 @@ code {
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #fab005; 
+  background: #bebebe; 
   border-radius: 4px;
 }
 
@@ -39,7 +39,7 @@ div{
 }
 
 .active > div > button{
-background-color: #343A40;
+border: .5px solid #228be6;
 }
 
 
