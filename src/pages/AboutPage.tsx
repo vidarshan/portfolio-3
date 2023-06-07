@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { IAboutPage } from "../interfaces/IAboutPage";
 import {
   AboutPageContainer,
@@ -29,12 +29,14 @@ import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import { RiArrowUpCircleFill, RiMedalFill } from "react-icons/ri";
 import { ImQuotesLeft } from "react-icons/im";
 import { technicalCompetencies, technologies } from "../data/competencies";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { container, item } from "../animations";
 import { useAppDispatch, useAppSelector } from "../store/store";
 import { BiMedal, BiTrophy } from "react-icons/bi";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const largeScreen = useMediaQuery("(min-width: 700px)");
   const { stackoverflow } = useAppSelector((state) => state.stats);
   const [colorScheme] = useLocalStorage<ColorScheme>({
@@ -50,6 +52,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
       </Text>
       <Card sx={{ marginTop: 30 }} radius="lg" shadow="md">
         <Flex
+          ref={ref}
           sx={{
             marginBottom: 10,
           }}
@@ -85,7 +88,11 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
             direction="row"
             align="center"
           >
-            <motion.div variants={container} initial="hidden" animate="visible">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
               <Group>
                 <motion.div variants={item}>
                   <Tooltip label="Download resume" withArrow>
@@ -274,7 +281,11 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
         <Text sx={{ marginTop: 20 }} size="sm" weight={700}>
           Technical Competencies
         </Text>
-        <motion.div variants={container} initial="hidden" animate="visible">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           <Group sx={{ marginTop: 10, marginBottom: 20 }}>
             {technicalCompetencies.map((technology) => {
               return (
@@ -296,7 +307,11 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
         <Text sx={{ marginTop: 30 }} size="sm" weight={700}>
           Tools
         </Text>
-        <motion.div variants={container} initial="hidden" animate="visible">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           <Group sx={{ marginTop: 10, marginBottom: 20 }}>
             {technologies.map((technology) => {
               return (

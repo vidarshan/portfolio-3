@@ -6,3 +6,5 @@ export const WorkPageContainer = styled.section`
     font-weight: 600;
   }
 `;
+
+export const WorkMotionContainer = styled.div``;
