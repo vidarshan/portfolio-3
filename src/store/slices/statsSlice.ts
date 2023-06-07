@@ -43,26 +43,14 @@ export const getStats = createAsyncThunk("stats/getStats", async () => {
   const stackoverflowResponse = await axios.get(
     `https://api.stackexchange.com/2.2/users/15415996?&key=${process.env.REACT_APP_STACKOVERFLOW_API_KEY}&site=stackoverflow`
   );
-  // const customResponse = {
-  //   reputation: stackoverflowResponse?.data.items[0]?.reputation,
-  //   gold: stackoverflowResponse?.data.items[0]?.badge_counts?.gold,
-  //   silver: stackoverflowResponse?.data.items[0]?.badge_counts?.silver,
-  //   bronze: stackoverflowResponse?.data.items[0]?.badge_counts?.bronze,
-  //   stars: githubStarsResponse.data.length,
-  //   repos: githubResponse.data.public_repos,
-  // };
   const customResponse = {
-    reputation: 10,
-    gold: 10,
-    silver: 10,
-    bronze: 10,
-    stars: 10,
-    repos: 10,
+    reputation: stackoverflowResponse?.data.items[0]?.reputation,
+    gold: stackoverflowResponse?.data.items[0]?.badge_counts?.gold,
+    silver: stackoverflowResponse?.data.items[0]?.badge_counts?.silver,
+    bronze: stackoverflowResponse?.data.items[0]?.badge_counts?.bronze,
+    stars: githubStarsResponse.data.length,
+    repos: githubResponse.data.public_repos,
   };
-  console.log(
-    "🚀 ~ file: statsSlice.ts:55 ~ getStats ~ customResponse:",
-    customResponse
-  );
 
   return customResponse;
 });

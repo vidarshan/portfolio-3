@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useRef } from "react";
+import React, { FC, useRef } from "react";
 import { IWorkPage } from "../interfaces/IWorkPage";
 import {
   WorkPageContainer,

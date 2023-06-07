@@ -26,12 +26,11 @@ import { HiOutlineDownload } from "react-icons/hi";
 import { SiStackoverflow, SiGmail } from "react-icons/si";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
-import { RiArrowUpCircleFill, RiMedalFill } from "react-icons/ri";
 import { ImQuotesLeft } from "react-icons/im";
 import { technicalCompetencies, technologies } from "../data/competencies";
 import { motion, useInView } from "framer-motion";
 import { container, item } from "../animations";
-import { useAppDispatch, useAppSelector } from "../store/store";
+import { useAppSelector } from "../store/store";
 import { BiMedal, BiTrophy } from "react-icons/bi";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {

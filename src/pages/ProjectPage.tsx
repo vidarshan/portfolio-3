@@ -19,7 +19,6 @@ import { BiLinkExternal, BiMobileAlt } from "react-icons/bi";
 import { GrProjects, GrList } from "react-icons/gr";
 import { SiGithub } from "react-icons/si";
 import { projects } from "../data/projects";
-import f from "../images/placeholder.png";
 import { useMediaQuery } from "@mantine/hooks";
 import { projectsArchive } from "../data/projectArchive";
 import { motion, useInView } from "framer-motion";
@@ -28,7 +27,6 @@ import { container, item } from "../animations";
 const ProjectPage: FC<IProjectPage> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  console.log("🚀 ~ file: ProjectPage.tsx:30 ~ isInView:", isInView);
   const [selectedSegment, setSelectedSegment] = useState("projects");
   const largeScreen = useMediaQuery("(min-width: 700px)");
   return (

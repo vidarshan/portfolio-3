@@ -1,24 +1,18 @@
 import React, { FC, useEffect } from "react";
 import { IHomePage } from "../interfaces/IHomePage";
 import { HomePageContainer, ToggleText } from "../styles/pages/HomePage";
-import { Box, Flex, Kbd, Text } from "@mantine/core";
+import { Flex, Kbd, Text } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 import { TextContainer } from "../styles/pages/HomePage";
 import { useMediaQuery } from "@mantine/hooks";
 import { container, item } from "../animations";
 import { motion } from "framer-motion";
-import { useAppDispatch } from "../store/store";
-import { getStats } from "../store/slices/statsSlice";
 
 const HomePage: FC<IHomePage> = ({ id }) => {
   const os = useOs();
-  const dispatch = useAppDispatch();
   const largeScreen = useMediaQuery("(min-width: 60em)");
-  console.log(os);
 
-  useEffect(()=>{
-    dispatch(getStats());
-  })
+  useEffect(() => {});
 
   return (
     <HomePageContainer id={id}>
