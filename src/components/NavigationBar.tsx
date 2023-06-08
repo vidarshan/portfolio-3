@@ -34,7 +34,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   size="md"
                   variant="light"
                   radius="sm"
-                  color="blue"
+                  color="cyan"
                 >
                   <BiHome size={16} />
                 </NavigationItem>
@@ -48,7 +48,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   size="md"
                   variant="light"
                   radius="sm"
-                  color="blue"
+                  color="cyan"
                 >
                   <BiUserCircle size={16} />
                 </NavigationItem>
@@ -62,7 +62,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   size="md"
                   variant="light"
                   radius="sm"
-                  color="blue"
+                  color="cyan"
                 >
                   <BiBriefcase size={16} />
                 </NavigationItem>
@@ -76,7 +76,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   size="md"
                   variant="light"
                   radius="sm"
-                  color="blue"
+                  color="cyan"
                 >
                   <BiGrid size={16} />
                 </NavigationItem>
@@ -90,7 +90,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   size="md"
                   variant="light"
                   radius="sm"
-                  color="blue"
+                  color="cyan"
                 >
                   <BiTrophy size={16} />
                 </NavigationItem>
@@ -104,7 +104,7 @@ const NavigationBar: FC<INavigationBarContainer> = () => {
                   size="md"
                   variant="light"
                   radius="sm"
-                  color="blue"
+                  color="cyan"
                 >
                   <BiMessage size={16} />
                 </NavigationItem>

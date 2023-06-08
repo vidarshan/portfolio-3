@@ -132,35 +132,11 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                   </Tooltip>
                 </motion.div>
                 <motion.div variants={item}>
-                  <HoverCard width={280} shadow="md" withArrow>
-                    <HoverCard.Target>
-                      <ActionIcon radius="md" variant="light" size="lg">
-                        <BsGithub />
-                      </ActionIcon>
-                    </HoverCard.Target>
-                    <HoverCard.Dropdown
-                      style={{
-                        backgroundColor:
-                          colorScheme === "dark" ? "#fff" : "#000",
-                        color: "white",
-                        fontWeight: 600,
-                      }}
-                    >
-                      <Text
-                        size="sm"
-                        color={colorScheme === "dark" ? "#000" : "#fff"}
-                      >
-                        Stackoverflow reputation, gold, silver, and bronze
-                        medial I've aquired through my interactions with their
-                        site.
-                      </Text>
-                      <Flex direction="row" justify="flex-end">
-                        <Anchor href="https://mantine.dev/" target="_blank">
-                          View Account
-                        </Anchor>
-                      </Flex>
-                    </HoverCard.Dropdown>
-                  </HoverCard>
+                  <Tooltip label="Github" withArrow>
+                    <ActionIcon radius="md" variant="light" size="lg">
+                      <BsGithub />
+                    </ActionIcon>
+                  </Tooltip>
                 </motion.div>
                 <motion.div variants={item}>
                   <HoverCard width={280} shadow="md" withArrow>
@@ -170,15 +146,17 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                       >
                         <ActionIcon
                           color="orange"
-                          radius="xl"
-                          variant="filled"
+                          radius="md"
+                          variant="light"
                           size="lg"
                         >
                           <SiStackoverflow />
                         </ActionIcon>
                         <GithubIconContainer>
                           <BiTrophy
-                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                            color={
+                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
+                            }
                           />
                         </GithubIconContainer>
                         <GithubText
@@ -188,7 +166,9 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         </GithubText>
                         <GithubIconContainer>
                           <BiMedal
-                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                            color={
+                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
+                            }
                           />
                         </GithubIconContainer>
                         <GithubText
@@ -198,7 +178,9 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         </GithubText>
                         <GithubIconContainer>
                           <BiMedal
-                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                            color={
+                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
+                            }
                           />
                         </GithubIconContainer>
                         <GithubText
@@ -208,7 +190,9 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         </GithubText>
                         <GithubIconContainer>
                           <BiMedal
-                            color={colorScheme === "dark" ? "#fff" : "#fff"}
+                            color={
+                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
+                            }
                           />
                         </GithubIconContainer>
                         <GithubText

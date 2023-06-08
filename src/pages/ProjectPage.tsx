@@ -14,8 +14,17 @@ import {
   Spoiler,
   Text,
   Box,
+  Tooltip,
 } from "@mantine/core";
-import { BiLinkExternal, BiMobileAlt } from "react-icons/bi";
+import {
+  BiArchiveIn,
+  BiGlobe,
+  BiGlobeAlt,
+  BiGrid,
+  BiLinkExternal,
+  BiListCheck,
+  BiMobileAlt,
+} from "react-icons/bi";
 import { GrProjects, GrList } from "react-icons/gr";
 import { SiGithub } from "react-icons/si";
 import { projects } from "../data/projects";
@@ -23,12 +32,28 @@ import { useMediaQuery } from "@mantine/hooks";
 import { projectsArchive } from "../data/projectArchive";
 import { motion, useInView } from "framer-motion";
 import { container, item } from "../animations";
+import { BsGithub } from "react-icons/bs";
 
 const ProjectPage: FC<IProjectPage> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [selectedSegment, setSelectedSegment] = useState("projects");
   const largeScreen = useMediaQuery("(min-width: 700px)");
+
+  const onProjectOpen = (tag: string, name: string, url: string) => {
+    if (tag === "Mobile") {
+      window.open(url, name, "resizable=0,width=441,height=899");
+    } else {
+      window.open(url, "_blank");
+    }
+  };
+
+  const onProjectRepo = (url: string) => {
+    if (url !== "no-repo") {
+      window.open(url, "_blank");
+    }
+  };
+
   return (
     <ProjectPageContainer id={id}>
       <Text size={32} weight={700}>
@@ -37,17 +62,18 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
       <Box sx={{ marginBottom: 30 }}>
         <SegmentedControl
           ref={ref}
-          radius="xl"
+          radius="md"
           value={selectedSegment}
           onChange={(e) => setSelectedSegment(e)}
           transitionTimingFunction="linear"
+          color="cyan"
           mt={50}
           data={[
             {
               value: "projects",
               label: (
                 <Center>
-                  <GrProjects size="1rem" />
+                  <BiGrid />
                   <Box ml={10}>Projects</Box>
                 </Center>
               ),
@@ -56,7 +82,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
               value: "archive",
               label: (
                 <Center>
-                  <GrList size="1rem" />
+                  <BiArchiveIn />
                   <Box ml={10}>Projects Archive</Box>
                 </Center>
               ),
@@ -81,38 +107,51 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                           sx={{
                             position: "absolute",
                             zIndex: 1000,
-                            right: 8,
+                            right: 40,
                             top: 8,
+                            marginRight: 10,
                           }}
-                          color="blue"
-                          variant="filled"
-                          radius="xl"
-                          size="md"
+                          color="indigo"
+                          variant="light"
+                          radius="md"
+                          size="lg"
+                          onClick={() => onProjectRepo(project.repo)}
                         >
-                          <BiMobileAlt />
+                          <BsGithub />
                         </ActionIcon>
                         <ActionIcon
                           sx={{
                             position: "absolute",
                             zIndex: 1000,
-                            right: 40,
+                            right: 8,
                             top: 8,
-                            marginRight: 10,
                           }}
                           color="teal"
-                          variant="filled"
-                          radius="xl"
-                          size="md"
+                          variant="light"
+                          radius="md"
+                          size="lg"
+                          onClick={() =>
+                            onProjectOpen(
+                              project.tags,
+                              project.name,
+                              project.demo
+                            )
+                          }
                         >
-                          <SiGithub />
+                          {project.tags === "Mobile" ? (
+                            <BiMobileAlt />
+                          ) : (
+                            <BiGlobe />
+                          )}
                         </ActionIcon>
+
                         <Image src={project.image} height={300} alt="Norway" />
                       </Card.Section>
                       <Group position="apart" mt="md" mb="xs">
                         <Text td="underline" size={16} weight={700}>
                           {project.name}
                         </Text>
-                        <Badge color="pink" variant="light" radius="xl">
+                        <Badge color="pink" variant="light" radius="sm">
                           {project.tags}
                         </Badge>
                       </Group>
@@ -133,9 +172,9 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                             <Badge
                               key={tech.id}
                               color={tech.color}
-                              size="xs"
+                              size="md"
                               variant="filled"
-                              radius="xl"
+                              radius="sm"
                             >
                               {tech.name}
                             </Badge>
@@ -158,7 +197,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
           {projectsArchive.map((archived) => {
             return (
               <motion.div variants={item}>
-                <Card radius="lg" withBorder mb={20}>
+                <Card radius="lg" shadow="md" withBorder mb={20}>
                   <Flex direction={largeScreen ? "row" : "column"}>
                     <Flex direction="column" justify="center">
                       <Image
@@ -207,7 +246,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                                     color={tech.color}
                                     size="sm"
                                     variant="filled"
-                                    radius="xl"
+                                    radius="sm"
                                   >
                                     {tech.name}
                                   </Badge>
@@ -224,24 +263,45 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                             marginTop: largeScreen ? 0 : 10,
                           }}
                         >
-                          <ActionIcon
-                            mr={10}
-                            color="teal"
-                            variant="filled"
-                            radius="lg"
-                            size="lg"
+                          <Tooltip
+                            label="View Demo"
+                            position="bottom"
+                            withArrow
                           >
-                            <BiLinkExternal />
-                          </ActionIcon>
-                          <ActionIcon
-                            mr={10}
-                            color="gray"
-                            variant="filled"
-                            radius="xl"
-                            size="lg"
+                            <ActionIcon
+                              mr={10}
+                              color="teal"
+                              variant="light"
+                              radius="md"
+                              size="lg"
+                              onClick={() =>
+                                onProjectOpen(
+                                  archived.tags,
+                                  archived.name,
+                                  archived.demo
+                                )
+                              }
+                            >
+                              <BiGlobe />
+                            </ActionIcon>
+                          </Tooltip>
+                          <Tooltip
+                            label="View Repo"
+                            position="bottom"
+                            withArrow
                           >
-                            <SiGithub />
-                          </ActionIcon>
+                            <ActionIcon
+                              mr={10}
+                              color="indigo"
+                              variant="light"
+                              radius="md"
+                              size="lg"
+                              disabled={archived.repo === "no-repo"}
+                              onClick={() => onProjectRepo(archived.repo)}
+                            >
+                              <BsGithub />
+                            </ActionIcon>
+                          </Tooltip>
                         </Flex>
                       </Flex>
                     </Flex>

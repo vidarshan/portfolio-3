@@ -119,7 +119,7 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
           <Text mb={40} size={32} weight={700}>
             Reach Out
           </Text>
-          <Card radius="lg" shadow="md">
+          <Card radius="lg" shadow="md" withBorder>
             <form onSubmit={form.onSubmit((values) => sendEmail(values))}>
               <Text sx={{ marginBottom: 30 }} size="sm" weight={700}>
                 Send me a message
@@ -145,7 +145,7 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
                     size="lg"
                     radius="md"
                     color="gray"
-                    variant="filled"
+                    variant="light"
                     onClick={() => clearForm()}
                   >
                     <MdOutlineClose />
@@ -153,9 +153,9 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
                   <Button
                     size="sm"
                     radius="md"
-                    color="teal"
+                    color="cyan"
                     leftIcon={<IoSend />}
-                    variant="filled"
+                    variant="light"
                     type="submit"
                   >
                     Send Message

@@ -49,7 +49,7 @@ export const projects = [
       "A mobile application, built with cross platform mobile development tools. Suitable for a small-mid local restaurant which needs to maintain a separate mobile application for their business operations. Consists of functionalities such as maintaining meal categories, customization of meals, maintaining meals in a cart, ordering meals and keeping track of deliveries.",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806423/Tech_Stop_Mobile_1_tjbuo5.png",
-    demo: "no-demo",
+    demo: "https://meal-cart.onrender.com",
     tags: "Mobile",
     repo: "https://github.com/vidarshan/restaurant-app",
     technologies: [
@@ -66,6 +66,39 @@ export const projects = [
       {
         id: 3,
         name: "Redux ToolKit",
+        color: "blue",
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Techstop Mobile",
+    description:
+      "A mobile app based on an online gadget shop. Consists of basic yet vital functionalities for an ecommerce app.  With a very easy to use and visually appealing design, it helps users to get what they expect from an ecommerce app conveniently.",
+    image:
+      "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806423/Tech_Stop_Mobile_mxvgud.png",
+    repo: "https://github.com/vidarshan/techstop-mobile",
+    demo: "https://booking-app-tu3v.onrender.com",
+    tags: "Mobile",
+    technologies: [
+      {
+        id: 1,
+        name: "Next JS",
+        color: "gray",
+      },
+      {
+        id: 2,
+        name: "Tailwind CSS",
+        color: "blue",
+      },
+      {
+        id: 3,
+        name: "Strapi",
+        color: "indigo",
+      },
+      {
+        id: 4,
+        name: "Postgres",
         color: "blue",
       },
     ],
@@ -159,15 +192,16 @@ export const projects = [
       },
     ],
   },
+
   {
-    id: 6,
-    name: "Techstop Mobile",
+    id: 7,
+    name: "Portfolio V2",
     description:
-      "A mobile app based on an online gadget shop. Consists of basic yet vital functionalities for an ecommerce app.  With a very easy to use and visually appealing design, it helps users to get what they expect from an ecommerce app conveniently.",
+      "Version 2 of my portfolio website built with Next JS. A significant inspiration for the design of the current version of my portfolio website.",
     image:
-      "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806423/Tech_Stop_Mobile_mxvgud.png",
-    repo: "https://github.com/vidarshan/findmystayfe",
-    demo: "https://find-your-home.vercel.app/",
+      "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806422/Portfolio_V2_aqtxdi.png",
+    repo: "https://github.com/vidarshan/portfolio-2",
+    demo: "https://portfolio-v2-vidarshanadithya.vercel.app/",
     tags: "Full-stack",
     technologies: [
       {
@@ -177,18 +211,13 @@ export const projects = [
       },
       {
         id: 2,
-        name: "Tailwind CSS",
+        name: "Typescript",
         color: "blue",
       },
       {
         id: 3,
-        name: "Strapi",
+        name: "Mantine",
         color: "indigo",
-      },
-      {
-        id: 4,
-        name: "Postgres",
-        color: "blue",
       },
     ],
   },

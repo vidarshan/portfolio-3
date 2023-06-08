@@ -11,10 +11,10 @@ const AffixControl = () => {
       <Transition transition="slide-up" mounted={scroll.y > 0}>
         {(transitionStyles) => (
           <ActionIcon
-            size="lg"
-            color="lime"
-            variant="filled"
-            radius="xl"
+            size="md"
+            color="blue"
+            variant="light"
+            radius="md"
             style={transitionStyles}
             onClick={() => scrollTo({ y: 0 })}
           >

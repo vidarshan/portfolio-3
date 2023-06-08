@@ -39,15 +39,19 @@ export const StackOverflowContainer = styled(Box)<ICustomChip>`
   ${(props) =>
     props.color
       ? css`
-          background-color: #e8590c;
+          background-color: rgba(232, 89, 12, 0.2);
         `
       : css`
-          background-color: rgb(253, 126, 20);
+          background-color: rgba(255, 244, 230, 1);
         `};
 
   width: fit-content;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   padding: 0;
+
+  button {
+    background-color: unset;
+  }
 `;
 
 export const GithubIconContainer = styled.div`
@@ -64,10 +68,10 @@ export const GithubText = styled(Text)<ICustomChip>`
   ${(props) =>
     props.color
       ? css`
-          color: #fff;
+          color: #fd7e14;
         `
       : css`
-          color: #fff;
+          color: #ffd8a8;
         `};
 
   :last-child {

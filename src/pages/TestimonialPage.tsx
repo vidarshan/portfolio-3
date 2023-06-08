@@ -37,12 +37,12 @@ const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
             return (
               <motion.div variants={framerItem}>
                 <Grid.Col key={item.id} xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <Card radius="lg" shadow="md">
+                  <Card radius="lg" shadow="md" withBorder>
                     <Flex direction="row" justify="space-between">
                       <Flex>
                         <Avatar
                           variant="filled"
-                          radius="xl"
+                          radius="md"
                           size="md"
                           color="teal"
                           src={item.avatar}
@@ -64,8 +64,8 @@ const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
                       >
                         <ActionIcon
                           color={item.type === "website" ? "orange" : "blue"}
-                          radius="xl"
-                          variant="filled"
+                          radius="md"
+                          variant="light"
                           size="lg"
                         >
                           {item.type === "website" ? (

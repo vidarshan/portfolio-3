@@ -79,7 +79,12 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                       </Flex>
                     </Flex>
                     <Tooltip position="left" label="View Employer" withArrow>
-                      <ActionIcon color="red" radius="xl" variant="" size="sm">
+                      <ActionIcon
+                        color="cyan"
+                        radius="sm"
+                        variant="light"
+                        size="sm"
+                      >
                         <BiLinkExternal />
                       </ActionIcon>
                     </Tooltip>
