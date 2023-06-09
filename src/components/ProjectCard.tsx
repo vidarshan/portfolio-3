@@ -52,37 +52,44 @@ const ProjectCard: FC<IProjectCard> = ({
           <motion.div style={{ height: "100%" }} variants={item}>
             <Card padding="sm" radius="lg" shadow="md" withBorder>
               <Card.Section sx={{ position: "relative" }}>
-                <ActionIcon
-                  sx={{
-                    position: "absolute",
-                    zIndex: 1000,
-                    right: 40,
-                    top: 8,
-                    marginRight: 10,
-                  }}
-                  color="indigo"
-                  variant="light"
-                  radius="md"
-                  size="lg"
-                  onClick={() => onProjectRepo(repo)}
+                <Tooltip label="View Repo" withArrow>
+                  <ActionIcon
+                    sx={{
+                      position: "absolute",
+                      zIndex: 1000,
+                      right: 40,
+                      top: 8,
+                      marginRight: 10,
+                    }}
+                    color="indigo"
+                    variant="light"
+                    radius="md"
+                    size="lg"
+                    onClick={() => onProjectRepo(repo)}
+                  >
+                    <BsGithub />
+                  </ActionIcon>
+                </Tooltip>
+                <Tooltip
+                  label={tags === "Mobile" ? "Open Preview" : "Open Project"}
+                  withArrow
                 >
-                  <BsGithub />
-                </ActionIcon>
-                <ActionIcon
-                  sx={{
-                    position: "absolute",
-                    zIndex: 1000,
-                    right: 8,
-                    top: 8,
-                  }}
-                  color="teal"
-                  variant="light"
-                  radius="md"
-                  size="lg"
-                  onClick={() => onProjectOpen(tags, name, demo)}
-                >
-                  {tags === "Mobile" ? <BiMobileAlt /> : <BiGlobe />}
-                </ActionIcon>
+                  <ActionIcon
+                    sx={{
+                      position: "absolute",
+                      zIndex: 1000,
+                      right: 8,
+                      top: 8,
+                    }}
+                    color="teal"
+                    variant="light"
+                    radius="md"
+                    size="lg"
+                    onClick={() => onProjectOpen(tags, name, demo)}
+                  >
+                    {tags === "Mobile" ? <BiMobileAlt /> : <BiGlobe />}
+                  </ActionIcon>
+                </Tooltip>
 
                 <Image src={image} height={300} alt="project-img" />
               </Card.Section>
@@ -143,7 +150,7 @@ const ProjectCard: FC<IProjectCard> = ({
                   <Flex direction="column">
                     <Flex direction="column">
                       <Text
-                        td="underline"
+                        tt="uppercase"
                         size={16}
                         weight={700}
                         sx={{ marginTop: largeScreen ? 0 : 5 }}
