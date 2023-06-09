@@ -15,12 +15,14 @@ import {
   Box,
   Card,
   ColorScheme,
+  CopyButton,
   Divider,
   Flex,
   Group,
   HoverCard,
   Text,
   Tooltip,
+  Button,
 } from "@mantine/core";
 import { HiOutlineDownload } from "react-icons/hi";
 import { SiStackoverflow, SiGmail, SiMaildotru } from "react-icons/si";
@@ -31,9 +33,15 @@ import { technicalCompetencies, technologies } from "../data/competencies";
 import { motion, useInView } from "framer-motion";
 import { container, item } from "../animations";
 import { useAppSelector } from "../store/store";
-import { BiMedal, BiTrophy } from "react-icons/bi";
+import { BiCheck, BiCopy, BiMedal, BiTrophy } from "react-icons/bi";
 import { FiDownloadCloud } from "react-icons/fi";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import {
+  cvLink,
+  githubLink,
+  linkedInLink,
+  stackoverflowLink,
+} from "../data/data";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {
   const ref = useRef(null);
@@ -45,6 +53,14 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
     defaultValue: "light",
     getInitialValueInEffect: true,
   });
+
+  const onEmailOpen = () => {
+    window.location.assign(`mailto:${process.env.REACT_APP_USER_EMAIL}`);
+  };
+
+  const onExternalOpen = (url: string) => {
+    window.open(url, "_blank");
+  };
 
   return (
     <AboutPageContainer id={id}>
@@ -102,22 +118,60 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                       radius="md"
                       variant="light"
                       size="lg"
+                      onClick={() => onExternalOpen(cvLink)}
                     >
                       <FiDownloadCloud />
                     </ActionIcon>
                   </Tooltip>
                 </motion.div>
                 <motion.div variants={item}>
-                  <Tooltip label="Gmail" withArrow>
-                    <ActionIcon
-                      color="red"
-                      radius="md"
-                      variant="light"
-                      size="lg"
+                  <HoverCard width={280} shadow="md" withArrow>
+                    <HoverCard.Target>
+                      <ActionIcon
+                        color="red"
+                        radius="md"
+                        variant="light"
+                        size="lg"
+                        onClick={() => onEmailOpen()}
+                      >
+                        <SiMaildotru />
+                      </ActionIcon>
+                    </HoverCard.Target>
+                    <HoverCard.Dropdown
+                      style={{
+                        backgroundColor:
+                          colorScheme === "dark" ? "#fff" : "#000",
+                        color: "white",
+                        fontWeight: 600,
+                      }}
                     >
-                      <SiMaildotru />
-                    </ActionIcon>
-                  </Tooltip>
+                      <Text
+                        size="sm"
+                        color={colorScheme === "dark" ? "#000" : "#fff"}
+                      >
+                        Mail directly to my inbox with the following email.
+                      </Text>
+                      <Flex direction="row" justify="flex-end">
+                        <CopyButton
+                          value={process.env.REACT_APP_USER_EMAIL || ""}
+                        >
+                          {({ copied, copy }) => (
+                            <Button
+                              size="xs"
+                              variant="white"
+                              color={copied ? "teal" : "blue"}
+                              onClick={copy}
+                              leftIcon={
+                                <>{copied ? <BiCheck /> : <BiCopy />}</>
+                              }
+                            >
+                              {copied ? "Copied" : "Copy email"}
+                            </Button>
+                          )}
+                        </CopyButton>
+                      </Flex>
+                    </HoverCard.Dropdown>
+                  </HoverCard>
                 </motion.div>
                 <motion.div variants={item}>
                   <Tooltip label="Linkedin" withArrow>
@@ -126,6 +180,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                       radius="md"
                       variant="light"
                       size="lg"
+                      onClick={() => onExternalOpen(linkedInLink)}
                     >
                       <BsLinkedin />
                     </ActionIcon>
@@ -133,7 +188,12 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                 </motion.div>
                 <motion.div variants={item}>
                   <Tooltip label="Github" withArrow>
-                    <ActionIcon radius="md" variant="light" size="lg">
+                    <ActionIcon
+                      radius="md"
+                      variant="light"
+                      size="lg"
+                      onClick={() => onExternalOpen(githubLink)}
+                    >
                       <BsGithub />
                     </ActionIcon>
                   </Tooltip>
@@ -219,7 +279,11 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         site.
                       </Text>
                       <Flex direction="row" justify="flex-end">
-                        <Anchor href="https://mantine.dev/" target="_blank">
+                        <Anchor
+                          color="cyan"
+                          href={stackoverflowLink}
+                          target="_blank"
+                        >
                           View Account
                         </Anchor>
                       </Flex>

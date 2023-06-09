@@ -25,9 +25,13 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  const onExternalOpen = (url: string) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <WorkPageContainer id={id}>
-      <Text size={32} weight={700}>
+      <Text ref={ref} size={32} weight={700}>
         Work Experience
       </Text>
       <motion.div
@@ -35,7 +39,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <WorkMotionContainer ref={ref}>
+        <WorkMotionContainer>
           {(work || []).map((item, index) => {
             return (
               <motion.div variants={framerItem}>
@@ -50,7 +54,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                   <Flex direction="row" align="center" justify="space-between">
                     <Flex direction="row" align="center">
                       <ThemeIcon
-                        color="teal"
+                        color="cyan"
                         radius="md"
                         size="md"
                         variant="filled"
@@ -70,7 +74,7 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                         >
                           {item.contribution}
                         </Text>
-                        <Text color="teal" weight={700} size="sm">
+                        <Text color="cyan" weight={700} size="sm">
                           {item.company}
                         </Text>
                         <Text size="xs" weight={700} mt={4}>
@@ -84,6 +88,8 @@ const WorkPage: FC<IWorkPage> = ({ id }) => {
                         radius="sm"
                         variant="light"
                         size="sm"
+                        disabled={item.link === "no-link"}
+                        onClick={() => onExternalOpen(item.link)}
                       >
                         <BiLinkExternal />
                       </ActionIcon>

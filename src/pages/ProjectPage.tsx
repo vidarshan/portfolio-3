@@ -100,7 +100,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
             {projects.map((project) => {
               return (
                 <Grid.Col key={project.id} xs={12} sm={6} md={6} lg={6} xl={6}>
-                  <motion.div variants={item}>
+                  <motion.div style={{ height: "100%" }} variants={item}>
                     <Card padding="sm" radius="lg" shadow="md" withBorder>
                       <Card.Section sx={{ position: "relative" }}>
                         <ActionIcon
@@ -148,7 +148,7 @@ const ProjectPage: FC<IProjectPage> = ({ id }) => {
                         <Image src={project.image} height={300} alt="Norway" />
                       </Card.Section>
                       <Group position="apart" mt="md" mb="xs">
-                        <Text td="underline" size={16} weight={700}>
+                        <Text tt="uppercase" size={16} weight={700}>
                           {project.name}
                         </Text>
                         <Badge color="pink" variant="light" radius="sm">

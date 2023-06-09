@@ -10,9 +10,10 @@ export const work = [
   {
     title: "Intern Software Engineer",
     icon: <RiNumber1 />,
-    contribution: "Contribution: Full Stack Developer",
+    contribution: "Role — Full Stack Developer",
     company: "Excalibur Systems",
     date: "2020-08 ~ 2021-04",
+    link: "no-link",
     details: [
       "Contributed to existing web applications based on React JS, to extend and improve their functionality.",
       "Designed user Interfaces and implemented the designs with code.",
@@ -50,9 +51,10 @@ export const work = [
   {
     title: "Trainee Software Engineer",
     icon: <RiNumber2 />,
-    contribution: "Contribution: Full Stack Developer",
+    contribution: "Role — Full Stack Developer",
     company: "Beta Launch",
     date: "2021-04 ~ 2021-09",
+    link: "https://www.betalaunch.io/",
     details: [
       "Revamped web applications with old user interfaces to modern and updated user interfaces.",
       "Implemented and validated new functionalities on frontend in React JS based web applications.",
@@ -90,9 +92,10 @@ export const work = [
   {
     title: "Associate Software Engineer",
     icon: <RiNumber3 />,
-    contribution: "Contribution: Full Stack Developer",
+    contribution: "Role — Full Stack Developer",
     company: "Beta Launch",
     date: "2022-09 ~ 2022-03",
+    link: "https://www.betalaunch.io/",
     details: [
       "Gained knowledge and implemented end-to-end testing for web applications.",
       "Implemented and validated new functionalities on frontend in React JS based web applications.",
@@ -135,9 +138,10 @@ export const work = [
   {
     title: "Associate Software Engineer",
     icon: <RiNumber4 />,
-    contribution: "Contribution: Full Stack Developer",
+    contribution: "Role — Full Stack Developer",
     company: "Dev4s",
     date: "2022-03 ~ 2022-05",
+    link: "https://dev4s.com/",
     details: [
       "Implemented user interfaces for new projects.",
       "Implemented new functionalities per client requirements both in the frontend and the backend.",
@@ -179,9 +183,10 @@ export const work = [
   {
     title: "Software Engineer",
     icon: <RiNumber5 />,
-    contribution: "Contribution: Frontend Developer",
+    contribution: "Role — Frontend Developer",
     company: "Appspotr",
     date: "2022-05 ~ Present",
+    link: "https://www.appspotr.com/",
     details: [
       "Implementing extensive Javascript/ Typescript based functionalities to design and develop mobile apps from a content managing system.",
       "Gaining experience in developing and maintaining custom user interface libraries and React JS library projects.",
