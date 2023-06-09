@@ -1,5 +1,4 @@
 import { ActionIcon, useMantineColorScheme } from "@mantine/core";
-import React from "react";
 import { BiSun, BiMoon } from "react-icons/bi";
 
 const ThemeSwitch = () => {

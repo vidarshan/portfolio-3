@@ -24,9 +24,7 @@ import {
   Tooltip,
   Button,
 } from "@mantine/core";
-import { HiOutlineDownload } from "react-icons/hi";
-import { SiStackoverflow, SiGmail, SiMaildotru } from "react-icons/si";
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { SiStackoverflow, SiMaildotru } from "react-icons/si";
 import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import { ImQuotesLeft } from "react-icons/im";
 import { technicalCompetencies, technologies } from "../data/competencies";

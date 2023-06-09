@@ -1,6 +1,5 @@
 import { ActionIcon, Affix, Transition, rem } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
-import React from "react";
 import { BiArrowToTop } from "react-icons/bi";
 
 const AffixControl = () => {

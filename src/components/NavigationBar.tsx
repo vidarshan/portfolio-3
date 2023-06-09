@@ -12,7 +12,6 @@ import {
   BiTrophy,
   BiUserCircle,
 } from "react-icons/bi";
-import { useMediaQuery } from "@mantine/hooks";
 import { FC } from "react";
 import { INavigationBarContainer } from "../interfaces/INavigationItem";
 import ThemeSwitch from "./ThemeSwitch";

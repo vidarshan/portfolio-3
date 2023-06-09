@@ -9,7 +9,6 @@ import {
   Text,
   ThemeIcon,
 } from "@mantine/core";
-import React from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { RiNumber5 } from "react-icons/ri";
 

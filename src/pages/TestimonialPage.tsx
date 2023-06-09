@@ -22,6 +22,11 @@ import { motion, useInView } from "framer-motion";
 const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const onExternalOpen = (url: string) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <TestimonialPageContainer id={id}>
       <Text mb={40} size={32} weight={700}>
@@ -67,6 +72,7 @@ const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
                           radius="md"
                           variant="light"
                           size="lg"
+                          onClick={() => onExternalOpen(item.link)}
                         >
                           {item.type === "website" ? (
                             <BsGlobe2 />
