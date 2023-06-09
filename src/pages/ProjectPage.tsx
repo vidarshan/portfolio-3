@@ -3,11 +3,10 @@ import { IProject, IProjectPage } from "../interfaces/IProjectPage";
 import { ProjectPageContainer } from "../styles/pages/ProjectPage";
 import { Center, Grid, SegmentedControl, Text, Box } from "@mantine/core";
 import { BiArchiveIn, BiGrid } from "react-icons/bi";
-import { projects } from "../data/projects";
-import { projectsArchive } from "../data/projectArchive";
 import { motion, useInView } from "framer-motion";
 import { container } from "../animations";
 import ProjectCard from "../components/ProjectCard";
+import { projects, projectsArchive } from "../data/data";
 
 const ProjectPage: FC<IProjectPage> = ({ id }) => {
   const ref = useRef(null);

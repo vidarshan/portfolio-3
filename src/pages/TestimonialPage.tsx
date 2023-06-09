@@ -13,12 +13,13 @@ import {
   Text,
   Tooltip,
 } from "@mantine/core";
-import { testimonials } from "../data/testimonials";
 import { BsGlobe2 } from "react-icons/bs";
 import { SiLinkedin } from "react-icons/si";
 import { ImQuotesLeft } from "react-icons/im";
 import { container, item as framerItem } from "../animations";
 import { motion, useInView } from "framer-motion";
+import { testimonials } from "../data/data";
+
 const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

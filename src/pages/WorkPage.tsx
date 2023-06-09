@@ -5,10 +5,10 @@ import {
   WorkMotionContainer,
 } from "../styles/pages/WorkPage";
 import { Text } from "@mantine/core";
-import { work } from "../data/work";
 import { container } from "../animations";
 import { motion, useInView } from "framer-motion";
 import WorkItem from "../components/WorkItem";
+import { work } from "../data/work";
 
 const WorkPage: FC<IWorkPage> = ({ id }) => {
   const ref = useRef(null);

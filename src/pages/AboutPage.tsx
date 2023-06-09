@@ -27,7 +27,6 @@ import {
 import { SiStackoverflow, SiMaildotru } from "react-icons/si";
 import { useLocalStorage, useMediaQuery } from "@mantine/hooks";
 import { ImQuotesLeft } from "react-icons/im";
-import { technicalCompetencies, technologies } from "../data/competencies";
 import { motion, useInView } from "framer-motion";
 import { container, item } from "../animations";
 import { useAppSelector } from "../store/store";
@@ -39,6 +38,8 @@ import {
   githubLink,
   linkedInLink,
   stackoverflowLink,
+  technicalCompetencies,
+  technologies,
 } from "../data/data";
 
 const AboutPage: FC<IAboutPage> = ({ id }) => {

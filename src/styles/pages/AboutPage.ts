@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Text } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import styled, { css } from "styled-components";
 import { ICustomChip } from "../../interfaces/IAboutPage";
 
