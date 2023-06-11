@@ -20,7 +20,6 @@ const HomePage: FC<IHomePage> = ({ id }) => {
   const os = useOs();
   const ref = useRef(null);
   const { scrolled } = useAppSelector((state) => state.overScroll);
-  console.log("🚀 ~ file: HomePage.tsx:67 ~ scrolled:", scrolled);
   return (
     <HomePageContainer ref={ref} id={id}>
       <InnerContainer>
