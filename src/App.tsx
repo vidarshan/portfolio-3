@@ -20,6 +20,7 @@ import ThemeSwitch from "./components/ThemeSwitch";
 import { Notifications } from "@mantine/notifications";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
@@ -70,6 +71,7 @@ const App = () => {
               <ProjectPage id="project" />
               <TestimonialPage id="testimonial" />
               <ContactPage id="contact" />
+              <Footer />
             </Container>
           </AppContainer>
         </MantineProvider>

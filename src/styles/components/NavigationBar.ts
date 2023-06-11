@@ -12,7 +12,7 @@ export const NavigationBarContainer = styled.div<INavigationBar>`
   align-items: center;
   width: 100%;
   z-index: 10000;
-  padding: 30px 0;
+  height: 60px;
 `;
 
 export const NavigationBarInnerContainer = styled(Box)`
