@@ -9,14 +9,12 @@ import { AppContainer } from "./styles/containers/App";
 import "./App.css";
 import AffixControl from "./components/AffixControl";
 import {
-  ActionIcon,
   ColorScheme,
   ColorSchemeProvider,
   Container,
   MantineProvider,
 } from "@mantine/core";
 import { useHotkeys, useLocalStorage, useMediaQuery } from "@mantine/hooks";
-import ThemeSwitch from "./components/ThemeSwitch";
 import { Notifications } from "@mantine/notifications";
 import { Provider } from "react-redux";
 import { store } from "./store/store";

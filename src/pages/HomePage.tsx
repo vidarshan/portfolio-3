@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useRef } from "react";
 import { IHomePage } from "../interfaces/IHomePage";
 import {
   FontRow,
@@ -7,24 +7,19 @@ import {
   InnerContainer,
   LargerText,
   MediumText,
-  ScrollText,
   SlidingContent,
   ToggleText,
 } from "../styles/pages/HomePage";
 import { Box, Flex, Kbd, Text } from "@mantine/core";
-import { useOs, useWindowScroll } from "@mantine/hooks";
-import { TextContainer } from "../styles/pages/HomePage";
-import { useMediaQuery } from "@mantine/hooks";
+import { useOs } from "@mantine/hooks";
 import { container, item } from "../animations";
-import { motion, useInView } from "framer-motion";
-import { BsArrowDown } from "react-icons/bs";
+import { motion } from "framer-motion";
 import { useAppSelector } from "../store/store";
 
 const HomePage: FC<IHomePage> = ({ id }) => {
   const os = useOs();
   const ref = useRef(null);
   const { scrolled } = useAppSelector((state) => state.overScroll);
-  const largeScreen = useMediaQuery("(min-width: 60em)");
   console.log("🚀 ~ file: HomePage.tsx:67 ~ scrolled:", scrolled);
   return (
     <HomePageContainer ref={ref} id={id}>

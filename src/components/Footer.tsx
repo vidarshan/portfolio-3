@@ -1,5 +1,4 @@
-import { Anchor, Box, Flex, Text } from "@mantine/core";
-import React from "react";
+import { Anchor, Flex, Text } from "@mantine/core";
 import { currentRepoLink } from "../data/data";
 
 const Footer = () => {

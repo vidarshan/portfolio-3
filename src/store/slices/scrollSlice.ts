@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 interface StatsState {
   scrolled: boolean;
