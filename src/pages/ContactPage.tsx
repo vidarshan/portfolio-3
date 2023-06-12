@@ -22,8 +22,8 @@ import emailjs from "@emailjs/browser";
 const ContactPage: FC<IContactPage> = ({ id }) => {
   const form = useForm({
     initialValues: {
-      email: "",
-      message: "",
+      email: "v@gmail.com",
+      message: "Some Test Message",
       termsOfService: false,
     },
     validate: {
@@ -61,18 +61,11 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
         }),
       });
 
-      // const emailres = await emailjs.send(
-      //   process?.env?.REACT_APP_EMAILJS_SERVICE as string,
-      //   process?.env?.REACT_APP_EMAILJS_TEMPLATE as string,
-      //   formInfo as any,
-      //   process?.env?.REACT_APP_EMAILJS_USER as string
-      // );
-
       const emailres = await emailjs.send(
-        "" as string,
-        "" as string,
+        process.env.REACT_APP_EMAILJS_SERVICE as string,
+        process.env.REACT_APP_EMAILJS_TEMPLATE as string,
         formInfo as any,
-        "" as string
+        process.env.REACT_APP_EMAILJS_USER as string
       );
 
       if (emailres && emailres.status === 200) {
@@ -82,7 +75,7 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
           title: "Sent!",
           message: "Sent your message to the inbox",
           icon: <IoMdCheckmark size="1rem" />,
-          autoClose: 20000,
+          autoClose: 2000,
           withCloseButton: false,
           withBorder: true,
           radius: "md",
@@ -99,7 +92,7 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
         title: "Oops!",
         message: "Failed. Please try again.",
         icon: <IoMdClose size="1rem" />,
-        autoClose: 20000,
+        autoClose: 2000,
         withCloseButton: false,
         withBorder: true,
         radius: "md",

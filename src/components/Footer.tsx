@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Flex mt={10} mb={10} direction="column" align="center">
       <Text size={14} weight={600}>
-        Made with React JS |{" "}
+        2023 © Made with React |{" "}
         <Anchor href={currentRepoLink} target="_blank" size={14}>
           View Repository
         </Anchor>

@@ -221,12 +221,12 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         <GithubText
                           color={colorScheme === "dark" ? false : true}
                         >
-                          {stackoverflow.gold}
+                          {stackoverflow.reputation}
                         </GithubText>
                         <GithubIconContainer>
                           <BiMedal
                             color={
-                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
+                              colorScheme === "dark" ? "#fae872" : "#a19b00"
                             }
                           />
                         </GithubIconContainer>
@@ -238,7 +238,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         <GithubIconContainer>
                           <BiMedal
                             color={
-                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
+                              colorScheme === "dark" ? "#dadada" : "#8b8b8b"
                             }
                           />
                         </GithubIconContainer>
@@ -250,7 +250,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         <GithubIconContainer>
                           <BiMedal
                             color={
-                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
+                              colorScheme === "dark" ? "#ffbea8" : "#e26d33"
                             }
                           />
                         </GithubIconContainer>

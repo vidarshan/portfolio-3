@@ -86,7 +86,7 @@ const TestimonialPage: FC<ITestimonialage> = ({ id }) => {
                     <Divider my="sm" />
                     <Blockquote
                       icon={<ImQuotesLeft color="#c2c2c2" />}
-                      sx={{ fontSize: "14px", fontWeight: 700 }}
+                      sx={{ fontSize: "14px", fontWeight: 500 }}
                     >
                       <Spoiler
                         maxHeight={130}

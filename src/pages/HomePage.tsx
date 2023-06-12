@@ -1,4 +1,4 @@
-import React, { FC, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import { IHomePage } from "../interfaces/IHomePage";
 import {
   FontRow,
@@ -14,12 +14,20 @@ import { Box, Flex, Kbd, Text } from "@mantine/core";
 import { useOs } from "@mantine/hooks";
 import { container, item } from "../animations";
 import { motion } from "framer-motion";
-import { useAppSelector } from "../store/store";
+import { AppDispatch, useAppSelector } from "../store/store";
+import { useDispatch } from "react-redux";
+import { getStats } from "../store/slices/statsSlice";
 
 const HomePage: FC<IHomePage> = ({ id }) => {
   const os = useOs();
   const ref = useRef(null);
+  const dispatch = useDispatch<AppDispatch>();
   const { scrolled } = useAppSelector((state) => state.overScroll);
+
+  useEffect(() => {
+    dispatch(getStats());
+  }, [dispatch]);
+
   return (
     <HomePageContainer ref={ref} id={id}>
       <InnerContainer>
