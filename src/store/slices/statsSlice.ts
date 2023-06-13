@@ -25,7 +25,7 @@ const initialState: StatsState = {
 
 export const getStats = createAsyncThunk("stats/getStats", async () => {
   const stackoverflowResponse = await axios.get(
-    `https://api.stackexchange.com/2.2/users/15415996?&key=${process.env.REACT_APP_STACKOVERFLOW_API_KEY}&site=stackoverflow`
+    `${process.env.REACT_APP_STACK_EXCHANGE_URL}${process.env.REACT_APP_STACKOVERFLOW_USER}?&key=${process.env.REACT_APP_STACKOVERFLOW_API_KEY}&site=stackoverflow`
   );
   const customResponse = {
     reputation: stackoverflowResponse?.data.items[0]?.reputation,
