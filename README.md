@@ -27,6 +27,7 @@ Version 3 of my portfolio website with all of my developer related activities an
 - Mantine x Styled Components
 - Redux Toolkit
 - Vercel
+- Framer motion
 
 ## 👷‍♂️ Setup Project
 
