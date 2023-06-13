@@ -22,8 +22,8 @@ import emailjs from "@emailjs/browser";
 const ContactPage: FC<IContactPage> = ({ id }) => {
   const form = useForm({
     initialValues: {
-      email: "v@gmail.com",
-      message: "Some Test Message",
+      email: "",
+      message: "",
       termsOfService: false,
     },
     validate: {
