@@ -58,7 +58,9 @@ const HomePage: FC<IHomePage> = ({ id }) => {
 
         {!scrolled ? (
           <SlidingContent>
-            <Text weight={600}>Scroll down to continue</Text>
+            <Text size={14} weight={600}>
+              Scroll down to continue
+            </Text>
           </SlidingContent>
         ) : (
           <Box></Box>

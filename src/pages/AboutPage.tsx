@@ -79,8 +79,8 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
           <Flex align="center">
             <Avatar
               variant="filled"
-              radius="xl"
-              size="md"
+              radius="md"
+              size="lg"
               color="teal"
               src="https://res.cloudinary.com/dury4s2jk/image/upload/v1683982446/myimage.81659e40_mmklpi.webp"
             />
@@ -226,7 +226,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         <GithubIconContainer>
                           <BiMedal
                             color={
-                              colorScheme === "dark" ? "#fae872" : "#a19b00"
+                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
                             }
                           />
                         </GithubIconContainer>
@@ -238,7 +238,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         <GithubIconContainer>
                           <BiMedal
                             color={
-                              colorScheme === "dark" ? "#dadada" : "#8b8b8b"
+                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
                             }
                           />
                         </GithubIconContainer>
@@ -250,7 +250,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         <GithubIconContainer>
                           <BiMedal
                             color={
-                              colorScheme === "dark" ? "#ffbea8" : "#e26d33"
+                              colorScheme === "dark" ? "#ffd8a8" : "#fd7e14"
                             }
                           />
                         </GithubIconContainer>
@@ -274,7 +274,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
                         color={colorScheme === "dark" ? "#000" : "#fff"}
                       >
                         My Stackoverflow reputation, gold, silver, and bronze
-                        medial I've aquired through my interactions with their
+                        medals I've aquired through my interactions with their
                         site.
                       </Text>
                       <Flex direction="row" justify="flex-end">
@@ -296,7 +296,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
         <Divider />
         <Box mt={10} mb={10}>
           <Blockquote icon={<ImQuotesLeft color="#c2c2c2" />} cite="">
-            <Text size={15} weight={500}>
+            <Text size={15} weight={600}>
               I'm a Software Engineer who likes to see things being built one
               line of code at a time. Well organised and prefers to have
               incremental self-development based on the knowledge gained. <br />
@@ -321,7 +321,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
           </Blockquote>
         </Box>
         <Divider />
-        <Text sx={{ marginTop: 20 }} size="sm" weight={700}>
+        <Text sx={{ marginTop: 20 }} size="sm" weight={600}>
           Technical Competencies
         </Text>
         <motion.div
@@ -347,7 +347,7 @@ const AboutPage: FC<IAboutPage> = ({ id }) => {
             })}
           </Group>
         </motion.div>
-        <Text sx={{ marginTop: 30 }} size="sm" weight={700}>
+        <Text sx={{ marginTop: 30 }} size="sm" weight={600}>
           Tools
         </Text>
         <motion.div
