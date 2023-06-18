@@ -23,9 +23,9 @@ export const sliding = keyframes`
 `;
 
 export const HomePageContainer = styled.section`
-  height: calc(100vh - 60px);
+  height: 100vh;
   position: relative;
-  margin-top: 60px;
+  padding-top: 60px;
 `;
 
 export const TextContainer = styled(Box)`

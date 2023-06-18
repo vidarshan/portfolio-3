@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useRef } from "react";
 import { IContactPage } from "../interfaces/IContactPage";
 import { ContactPageContainer } from "../styles/pages/ContactPage";
 import { useForm } from "@mantine/form";
@@ -18,8 +18,12 @@ import { IoSend } from "react-icons/io5";
 import { notifications } from "@mantine/notifications";
 import { IoMdCheckmark, IoMdClose } from "react-icons/io";
 import emailjs from "@emailjs/browser";
+import { motion, useInView } from "framer-motion";
+import { container, item } from "../animations";
 
 const ContactPage: FC<IContactPage> = ({ id }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   const form = useForm({
     initialValues: {
       email: "",
@@ -106,58 +110,66 @@ const ContactPage: FC<IContactPage> = ({ id }) => {
   };
 
   return (
-    <ContactPageContainer id={id}>
+    <ContactPageContainer ref={ref} id={id}>
       <Flex sx={{ width: "100%" }} direction="column" justify="center">
-        <Box id="reachOutSection">
-          <Text mb={40} size={32} weight={700}>
-            Reach Out
-          </Text>
-          <Card radius="lg" shadow="md" withBorder>
-            <form onSubmit={form.onSubmit((values) => sendEmail(values))}>
-              <Text sx={{ marginBottom: 30 }} size="sm" weight={700}>
-                Send me a message
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          <motion.div variants={item}>
+            <Box id="reachOutSection">
+              <Text mb={40} size={32} weight={700}>
+                Reach Out
               </Text>
-              <TextInput
-                radius="md"
-                label="Your Email"
-                placeholder="Email address"
-                {...form.getInputProps("email")}
-                withAsterisk
-              />
-              <Textarea
-                mt={20}
-                radius="md"
-                placeholder="Your message"
-                label="Your message"
-                {...form.getInputProps("message")}
-                withAsterisk
-              />
-              <Flex direction="row" justify="flex-end" mt={20}>
-                <Group>
-                  <ActionIcon
-                    size="lg"
+              <Card radius="lg" shadow="md" withBorder>
+                <form onSubmit={form.onSubmit((values) => sendEmail(values))}>
+                  <Text sx={{ marginBottom: 30 }} size="sm" weight={700}>
+                    Send me a message
+                  </Text>
+                  <TextInput
                     radius="md"
-                    color="gray"
-                    variant="light"
-                    onClick={() => clearForm()}
-                  >
-                    <MdOutlineClose />
-                  </ActionIcon>
-                  <Button
-                    size="sm"
+                    label="Your Email"
+                    placeholder="Email address"
+                    {...form.getInputProps("email")}
+                    withAsterisk
+                  />
+                  <Textarea
+                    mt={20}
                     radius="md"
-                    color="cyan"
-                    leftIcon={<IoSend />}
-                    variant="light"
-                    type="submit"
-                  >
-                    Send Message
-                  </Button>
-                </Group>
-              </Flex>
-            </form>
-          </Card>
-        </Box>
+                    placeholder="Your message"
+                    label="Your message"
+                    {...form.getInputProps("message")}
+                    withAsterisk
+                  />
+                  <Flex direction="row" justify="flex-end" mt={20}>
+                    <Group>
+                      <ActionIcon
+                        size="lg"
+                        radius="md"
+                        color="gray"
+                        variant="light"
+                        onClick={() => clearForm()}
+                      >
+                        <MdOutlineClose />
+                      </ActionIcon>
+                      <Button
+                        size="sm"
+                        radius="md"
+                        color="cyan"
+                        leftIcon={<IoSend />}
+                        variant="light"
+                        type="submit"
+                      >
+                        Send Message
+                      </Button>
+                    </Group>
+                  </Flex>
+                </form>
+              </Card>
+            </Box>
+          </motion.div>
+        </motion.div>
       </Flex>
     </ContactPageContainer>
   );
