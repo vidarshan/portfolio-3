@@ -97,7 +97,17 @@ const ProjectCard: FC<IProjectCard> = ({
                 <Text tt="uppercase" size={16} weight={700}>
                   {name}
                 </Text>
-                <Badge color="pink" variant="light" radius="sm">
+                <Badge
+                  color={
+                    tags === "Full-stack"
+                      ? "orange"
+                      : tags === "Mobile"
+                      ? "grape"
+                      : "gray"
+                  }
+                  variant="light"
+                  radius="sm"
+                >
                   {tags}
                 </Badge>
               </Group>

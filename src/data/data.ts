@@ -147,6 +147,49 @@ export const projects = [
   },
   {
     id: 2,
+    name: "Formy",
+    description:
+      "A questionnaire generating platform that allows users to create forms with questions and share the built questionnaires with participants in order to collect responses. Upon collecting, the questionnaire builder could see the participant responses easily, quickly and in a well organized layout. Formy allows users to create questionnaires with text, numbers, options, single option and upto rating scales.",
+    image:
+      "https://res.cloudinary.com/dury4s2jk/image/upload/v1691914357/Default_hykn5x.png",
+    repo: "https://github.com/vidarshan/formy-questionnaire.git",
+    demo: "https://quesionnaire-builder.vercel.app/home",
+    tags: "Full-stack",
+    technologies: [
+      {
+        id: 1,
+        name: "Typescript",
+        color: "blue",
+      },
+      {
+        id: 2,
+        name: "React JS",
+        color: "blue",
+      },
+      {
+        id: 3,
+        name: "Mantine",
+        color: "blue",
+      },
+      {
+        id: 4,
+        name: "Node JS",
+        color: "green",
+      },
+      {
+        id: 5,
+        name: "Express JS",
+        color: "gray",
+      },
+      {
+        id: 6,
+        name: "Mongo DB",
+        color: "green",
+      },
+    ],
+  },
+  {
+    id: 3,
     name: "Meal Central",
     description:
       "A mobile application, built with cross platform mobile development tools. Suitable for a small-mid local restaurant which needs to maintain a separate mobile application for their business operations. Consists of functionalities such as maintaining meal categories, customization of meals, maintaining meals in a cart, ordering meals and keeping track of deliveries.",
@@ -174,7 +217,7 @@ export const projects = [
     ],
   },
   {
-    id: 6,
+    id: 4,
     name: "Techstop Mobile",
     description:
       "A mobile app based on an online gadget shop. Consists of basic yet vital functionalities for an ecommerce app.  With a very easy to use and visually appealing design, it helps users to get what they expect from an ecommerce app conveniently.",
@@ -207,7 +250,7 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     name: "Open Weather",
     description:
       "Find the weather around you with this application powered by the Open Weather API. Uses a Geolocation API to find the weather according to your desired location or allows you to get the weather around your current location. Excellent presentation of weather divided into current weather, hourly forecast and daily forecast categories.",
@@ -245,7 +288,7 @@ export const projects = [
     ],
   },
   {
-    id: 4,
+    id: 6,
     name: "Github Search",
     description:
       "A simple application made with the use of Github REST API, which will allow the users to search for a github user, view their own repos and starred repos. Additionally, the users are able to see the profile information on the selected user very easily.",
@@ -273,7 +316,7 @@ export const projects = [
     ],
   },
   {
-    id: 5,
+    id: 7,
     name: "Great Success",
     description:
       "Great quotes to get you inspired and moving through the day, a simple yet, inspiring project. The more you shuffle, the more quotes you get. Minimalist design to give you a calming feel.",
@@ -297,7 +340,7 @@ export const projects = [
   },
 
   {
-    id: 7,
+    id: 8,
     name: "Portfolio V2",
     description:
       "Version 2 of my portfolio website built with Next JS. A significant inspiration for the design of the current version of my portfolio website.",
