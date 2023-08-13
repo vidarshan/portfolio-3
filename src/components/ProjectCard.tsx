@@ -103,7 +103,7 @@ const ProjectCard: FC<IProjectCard> = ({
                       ? "orange"
                       : tags === "Mobile"
                       ? "grape"
-                      : "gray"
+                      : "green"
                   }
                   variant="light"
                   radius="sm"
