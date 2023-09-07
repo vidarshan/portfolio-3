@@ -48,7 +48,7 @@ const HomePage: FC<IHomePage> = ({ id }) => {
                 <></>
               ) : (
                 <Flex mt={16}>
-                  <Kbd>{os === "macos" ? `⌘` : `Ctrl`} </Kbd> + <Kbd>J</Kbd>{" "}
+                  <Kbd>{`Ctrl`} </Kbd> + <Kbd>J</Kbd>{" "}
                   <ToggleText>to toggle theme</ToggleText>
                 </Flex>
               )}
