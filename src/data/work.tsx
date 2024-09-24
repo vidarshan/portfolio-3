@@ -185,14 +185,14 @@ export const work = [
     icon: <RiNumber5 />,
     contribution: "Role — Frontend Developer",
     company: "Appspotr",
-    date: "2022-05 ~ Present",
+    date: "2022-05 ~ 2024-05",
     link: "https://www.appspotr.com/",
     details: [
-      "Implementing extensive Javascript/ Typescript based functionalities to design and develop mobile apps from a content managing system.",
-      "Gaining experience in developing and maintaining custom user interface libraries and React JS library projects.",
-      "Implementing utility functionalities for React JS applications; drag-and-drop functions, etc...",
-      "Working with React based tools such as Redux Toolkit and Styled components, in order to maintain resusable and well refactored code.",
-      "Working with iOS and Android platforms to implement and modify features within the platform.",
+      "Implemented extensive Javascript/ Typescript based functionalities to design and develop mobile apps from a content managing system.",
+      "Gained experience in developing and maintaining custom user interface libraries and React JS library projects.",
+      "Implemented utility functionalities for React JS applications; drag-and-drop functions, etc...",
+      "Worked with React based tools such as Redux Toolkit and Styled components, in order to maintain resusable and well refactored code.",
+      "Worked with iOS and Android platforms to implement and modify features within the platform.",
     ],
     competencies: [
       {

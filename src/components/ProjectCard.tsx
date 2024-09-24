@@ -9,11 +9,14 @@ import {
   Image,
   Flex,
   Tooltip,
+  Popover,
+  ThemeIcon,
 } from "@mantine/core";
 import { motion } from "framer-motion";
 import { FC } from "react";
 import { BiGlobe, BiMobileAlt } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
+import { MdLockOutline } from "react-icons/md";
 import { item } from "../animations";
 import { IProjectCard } from "../interfaces/IProjectCard";
 import { useMediaQuery } from "@mantine/hooks";
@@ -52,7 +55,53 @@ const ProjectCard: FC<IProjectCard> = ({
           <motion.div style={{ height: "100%" }} variants={item}>
             <Card padding="sm" radius="lg" shadow="md" withBorder>
               <Card.Section sx={{ position: "relative" }}>
-                <Tooltip label="View Repo" withArrow>
+                {repo === "no-repo" ? (
+                  <Popover width={200} position="bottom" withArrow shadow="md">
+                    <Popover.Target>
+                      <ActionIcon
+                        sx={{
+                          position: "absolute",
+                          zIndex: 1000,
+                          right: 40,
+                          top: 8,
+                          marginRight: 10,
+                        }}
+                        color={repo === "no-repo" ? "yellow" : "indigo"}
+                        variant="light"
+                        radius="md"
+                        size="lg"
+                        onClick={() => onProjectRepo(repo)}
+                      >
+                        <MdLockOutline />
+                      </ActionIcon>
+                    </Popover.Target>
+
+                    <Popover.Dropdown>
+                      <Flex direction="column" align="center">
+                        <ThemeIcon
+                          color="yellow"
+                          variant="light"
+                          radius="md"
+                          size="lg"
+                        >
+                          <MdLockOutline />
+                        </ThemeIcon>
+                        <Text c="red" weight="bolder" mt={4} size="xs">
+                          Code Unavailable
+                        </Text>
+                        <Text
+                          c="orange"
+                          weight="bold"
+                          align="center"
+                          mt={4}
+                          size="xs"
+                        >
+                          This is a client project with a private repository.
+                        </Text>
+                      </Flex>
+                    </Popover.Dropdown>
+                  </Popover>
+                ) : (
                   <ActionIcon
                     sx={{
                       position: "absolute",
@@ -69,7 +118,8 @@ const ProjectCard: FC<IProjectCard> = ({
                   >
                     <BsGithub />
                   </ActionIcon>
-                </Tooltip>
+                )}
+
                 <Tooltip
                   label={tags === "Mobile" ? "Open Preview" : "Open Project"}
                   withArrow

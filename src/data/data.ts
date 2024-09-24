@@ -104,9 +104,62 @@ export const projectsArchive = [
 export const projects = [
   {
     id: 1,
+    name: "Stacey",
+    description:
+      "A dedicated video streaming platform designed specifically for a cartoon creator to showcase their animated series. This user-friendly website allows viewers to easily support their favorite shows through donations, facilitating the production of new content. Integrated with PayPal, the platform offers a subscription-based pay-per-view model, enabling viewers to access episodes seamlessly. Additionally, the site features an interactive forum where fans can engage in discussions and provide feedback, along with a dedicated fan art section to celebrate and showcase the creativity of the community. Join us in bringing animated stories to life while fostering a vibrant fan base!",
+    image:
+      "https://res.cloudinary.com/dury4s2jk/image/upload/v1727159889/Stacey_eiwxfy.png",
+    repo: "no-repo",
+    demo: "https://lanostrarisata.com/",
+    tags: "Full-stack",
+    technologies: [
+      {
+        id: 1,
+        name: "Typescript",
+        color: "blue",
+      },
+      {
+        id: 2,
+        name: "React JS",
+        color: "blue",
+      },
+      {
+        id: 3,
+        name: "Mantine",
+        color: "blue",
+      },
+      {
+        id: 4,
+        name: "Node JS",
+        color: "green",
+      },
+      {
+        id: 5,
+        name: "Express JS",
+        color: "gray",
+      },
+      {
+        id: 6,
+        name: "Mongo DB",
+        color: "green",
+      },
+      {
+        id: 7,
+        name: "Paypal API",
+        color: "blue",
+      },
+      {
+        id: 8,
+        name: "Socket IO",
+        color: "gray",
+      },
+    ],
+  },
+  {
+    id: 2,
     name: "Techstop",
     description:
-      "An e-commerce website, ideal for a tech gadget store. The minimalist user interface allows users to navigate within the application easily. Only the relevant information is shown, which makes the user interface even better. Includes the most needed features for an ecommerce website, such as search filters, shopping cart and an integrated mock payment gateway with Paypal.",
+      "An e-commerce platform tailored for a tech gadget store, featuring a sleek and minimalist user interface designed for effortless navigation. The website prioritizes user experience by displaying only the most relevant information, enhancing clarity and usability. Key features include advanced search filters for easy product discovery, a convenient shopping cart for seamless purchasing, and an integrated mock payment gateway with PayPal to streamline transactions. This site provides everything needed for a smooth and efficient online shopping experience, making it the perfect destination for tech enthusiasts",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806423/Techstop_jtn9v8.png",
     repo: "https://github.com/vidarshan/mern-gadget-shop",
@@ -143,13 +196,18 @@ export const projects = [
         name: "Mongo DB",
         color: "green",
       },
+      {
+        id: 7,
+        name: "Paypal API",
+        color: "blue",
+      },
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Formy",
     description:
-      "A questionnaire generating platform that allows users to create forms with questions and share the built questionnaires with participants in order to collect responses. Upon collecting, the questionnaire builder could see the participant responses easily, quickly and in a well organized layout. Formy allows users to create questionnaires with text, numbers, options, single option and upto rating scales.",
+      "A powerful questionnaire-generating platform that empowers users to create customized forms effortlessly. With an intuitive interface, users can design questionnaires featuring a variety of question types, including text, numbers, multiple-choice options, single selections, and rating scales. Once the questionnaires are shared with participants, users can easily collect responses and view the results in a well-organized layout. Formy streamlines the process of data collection and analysis, making it simple for users to gain insights from participant feedback and responses. Create, share, and analyze with Formy—your go-to solution for efficient questionnaire management!",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1691914357/Default_hykn5x.png",
     repo: "https://github.com/vidarshan/formy-questionnaire.git",
@@ -189,10 +247,10 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "Meal Central",
     description:
-      "A mobile application, built with cross platform mobile development tools. Suitable for a small-mid local restaurant which needs to maintain a separate mobile application for their business operations. Consists of functionalities such as maintaining meal categories, customization of meals, maintaining meals in a cart, ordering meals and keeping track of deliveries.",
+      "A cross-platform mobile application designed specifically for small to mid-sized local restaurants, streamlining their business operations with ease. This application offers essential functionalities, including the management of meal categories and the ability to customize dishes to meet customer preferences. Users can conveniently add meals to their cart, place orders, and track deliveries in real-time. With this mobile app, restaurants can enhance their customer experience, improve operational efficiency, and foster greater engagement with their patrons. Elevate your restaurant's service with this comprehensive mobile solution!",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806423/Tech_Stop_Mobile_1_tjbuo5.png",
     demo: "https://meal-cart.onrender.com",
@@ -217,10 +275,10 @@ export const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "Techstop Mobile",
     description:
-      "A mobile app based on an online gadget shop. Consists of basic yet vital functionalities for an ecommerce app.  With a very easy to use and visually appealing design, it helps users to get what they expect from an ecommerce app conveniently.",
+      "A mobile app designed for an online gadget shop, offering essential functionalities for a seamless e-commerce experience. With a user-friendly interface and visually appealing design, the app makes it easy for customers to browse and purchase gadgets effortlessly. Key features include intuitive navigation, secure payment options, and streamlined order tracking, ensuring that users can find exactly what they need quickly and conveniently. This app is tailored to enhance the shopping experience, allowing tech enthusiasts to explore the latest gadgets at their fingertips. Discover convenience and satisfaction with our dedicated e-commerce mobile solution!",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806423/Tech_Stop_Mobile_mxvgud.png",
     repo: "https://github.com/vidarshan/techstop-mobile",
@@ -250,10 +308,10 @@ export const projects = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     name: "Open Weather",
     description:
-      "Find the weather around you with this application powered by the Open Weather API. Uses a Geolocation API to find the weather according to your desired location or allows you to get the weather around your current location. Excellent presentation of weather divided into current weather, hourly forecast and daily forecast categories.",
+      "Discover the weather around you with our intuitive application powered by the Open Weather API. Utilizing the Geolocation API, the app allows users to check the weather for their current location or any desired area effortlessly. Experience an excellent presentation of weather information, neatly categorized into current conditions, hourly forecasts, and daily outlooks. With a user-friendly interface and accurate data, this app ensures you’re always informed about the weather, helping you plan your day with confidence. Stay prepared and enjoy seamless weather tracking at your fingertips!",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806422/Open_Weather_sbftmm.png",
     repo: "https://github.com/vidarshan/open-weather-app",
@@ -288,10 +346,10 @@ export const projects = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "Github Search",
     description:
-      "A simple application made with the use of Github REST API, which will allow the users to search for a github user, view their own repos and starred repos. Additionally, the users are able to see the profile information on the selected user very easily.",
+      "A straightforward application built using the GitHub REST API, designed to enhance the user experience for GitHub enthusiasts. This app allows users to easily search for any GitHub user and explore their repositories and starred repos with just a few clicks. Additionally, users can view detailed profile information of the selected GitHub user effortlessly. With its intuitive interface and seamless navigation, this application empowers users to connect with the GitHub community and discover projects that inspire them. Simplify your GitHub experience with our user-friendly search tool!",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806627/Github_Search_x0sq2n.png",
     repo: "https://github.com/vidarshan/github-search",
@@ -316,10 +374,10 @@ export const projects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     name: "Great Success",
     description:
-      "Great quotes to get you inspired and moving through the day, a simple yet, inspiring project. The more you shuffle, the more quotes you get. Minimalist design to give you a calming feel.",
+      "A simple yet inspiring project designed to motivate and uplift you throughout the day. This application offers a collection of great quotes that can energize your mindset and encourage positive thinking. With a unique shuffle feature, the more you interact with the app, the more fresh quotes you receive, keeping your inspiration flowing. The minimalist design enhances your experience by providing a calming and focused environment, allowing you to reflect on each quote. Embrace daily inspiration and elevate your mood with this beautifully crafted quotes application!",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685808236/Great_Success_booker.png",
     repo: "https://github.com/vidarshan/great-success",
@@ -340,10 +398,10 @@ export const projects = [
   },
 
   {
-    id: 8,
+    id: 9,
     name: "Portfolio V2",
     description:
-      "Version 2 of my portfolio website built with Next JS. A significant inspiration for the design of the current version of my portfolio website.",
+      "Version 2 of my portfolio website, crafted with Next.js. This iteration draws significant inspiration from the design principles and user experience of the previous version, showcasing my growth and evolution as a developer. With a refined layout and enhanced functionality, this portfolio not only highlights my skills and projects but also reflects my commitment to creating visually appealing and user-friendly experiences. Explore the new design and discover the passion and creativity that drive my work!",
     image:
       "https://res.cloudinary.com/dury4s2jk/image/upload/v1685806422/Portfolio_V2_aqtxdi.png",
     repo: "https://github.com/vidarshan/portfolio-2",
@@ -368,6 +426,7 @@ export const projects = [
     ],
   },
 ];
+
 export const testimonials = [
   {
     id: 1,
