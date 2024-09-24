@@ -1,5 +1,5 @@
 export const cvLink =
-  "https://drive.google.com/file/d/1OeF-l8vg8hDI0eVMWhzG2aacRChCWtEy/view?usp=sharing";
+  "https://drive.google.com/file/d/1DrSj9Ozg0gX1T8r9ok1mpeS1a0SFauWc/view?usp=sharing";
 export const linkedInLink = "https://www.linkedin.com/in/vidarshan-rathnayake/";
 export const githubLink = "https://github.com/vidarshan";
 export const stackoverflowLink =
